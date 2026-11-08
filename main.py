@@ -185,7 +185,7 @@ def run_hour_farm_mode(games: List[Dict[str, Any]]):
     console.print(f"  [{COLOR_ACCENT}]2[/] Топ-10 популярных игр (Множитель 10x)")
     console.print(f"  [{COLOR_ACCENT}]3[/] Выбрать свои игры вручную")
 
-    ch = Prompt.ask("\nВыбор", choices=["1", "2", "3"], default="1")
+    ch = Prompt.ask("\nВыбор", choices=["1", "2", "3"], default="1", show_choices=False, show_default=False)
 
     selected = []
     if ch == "2":
@@ -265,7 +265,7 @@ def run_humanizer_mode(games: List[Dict[str, Any]]):
     console.print(f"  [{COLOR_ACCENT}]1[/] Реалистичный режим (сессии 30-50 мин + перерыв 5-10 мин)")
     console.print(f"  [{COLOR_ACCENT}]2[/] Ускоренный / Демо (сессии 2-4 мин + перерыв 30 сек)")
 
-    mode = Prompt.ask("\nРежим", choices=["1", "2"], default="1")
+    mode = Prompt.ask("\nРежим", choices=["1", "2"], default="1", show_choices=False, show_default=False)
     is_demo = (mode == "2")
     sess_min, sess_max = (120, 240) if is_demo else (1800, 3000)
     afk_min, afk_max = (20, 45) if is_demo else (300, 600)
@@ -454,7 +454,7 @@ def show_stats(history: HistoryManager, total_games: int):
     console.print(f"\n  [{COLOR_ACCENT}]1[/] Очистить историю сессий")
     console.print(f"  [{COLOR_WHITE}]0[/] Назад")
 
-    ch = Prompt.ask("\nВыбор", choices=["0", "1"], default="0")
+    ch = Prompt.ask("\nВыбор", choices=["0", "1"], default="0", show_choices=False, show_default=False)
     if ch == "1":
         if Confirm.ask("Точно очистить историю?", default=False):
             history.clear()
@@ -478,7 +478,9 @@ def main():
         choice = Prompt.ask(
             f"   [{COLOR_MUTED}]выбор[/] [{COLOR_ACCENT}]>[/]",
             choices=["0", "00", "1", "01", "2", "02", "3", "03", "4", "04", "5", "05", "6", "06", "7", "07"],
-            default="1"
+            default="1",
+            show_choices=False,
+            show_default=False
         )
 
         ch = choice.lstrip("0") or "0"

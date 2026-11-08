@@ -40,7 +40,7 @@ def make_header_panel(discord_online: bool, total_games: int, boosted: int) -> P
     header_table.add_column(justify="right")
 
     header_table.add_row(
-        f"[{COLOR_DIM}]/[/] [bold {COLOR_WHITE}]spectre[/] [{COLOR_DIM}].dev[/]",
+        f"[{COLOR_DIM}]/[/] [bold {COLOR_WHITE}]spectre[/] [{COLOR_DIM}].dev[/] [{COLOR_MUTED}]by an1zy[/]",
         f"[{COLOR_DOT}]●[/] [{COLOR_MUTED}]discord activity engine[/]"
     )
 

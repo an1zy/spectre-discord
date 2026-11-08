@@ -2,6 +2,7 @@
 
 # SPECTRE
 ### High-Performance Discord Activity & Badge Virtualization Engine
+*Created by [an1zy](https://github.com/an1zy)*
 
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Platform](https://img.shields.io/badge/Platform-Windows_10%20%7C%2011-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://microsoft.com)
