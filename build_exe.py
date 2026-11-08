@@ -33,9 +33,9 @@ def build():
     print("Executing build command:", " ".join(cmd))
     res = subprocess.run(cmd)
     if res.returncode == 0:
-        print("\n[✓] Binary successfully built at: dist/spectre.exe")
+        print("\n[OK] Binary successfully built at: dist/spectre.exe")
     else:
-        print("\n[!] Build failed with exit code:", res.returncode)
+        print("\n[FAIL] Build failed with exit code:", res.returncode)
 
 if __name__ == "__main__":
     build()

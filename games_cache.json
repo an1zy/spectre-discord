@@ -30,7 +30,7 @@
   {
     "id": "356876590342340608",
     "name": "Rainbow Six Siege",
-    "exe": "rainbowsixgame.exe",
+    "exe": "rainbowsix.exe",
     "adult": false,
     "args": null
   },
@@ -44,7 +44,7 @@
   {
     "id": "356878860190613504",
     "name": "Heroes of the Storm",
-    "exe": "heroesofthestorm_x64.exe",
+    "exe": "heroes of the storm.exe",
     "adult": false,
     "args": null
   },
@@ -107,7 +107,7 @@
   {
     "id": "356944273133928458",
     "name": "Brawlhalla",
-    "exe": "brawlhalla\\brawlhalla.exe",
+    "exe": "brawlhalla.exe",
     "adult": false,
     "args": null
   },
@@ -191,7 +191,7 @@
   {
     "id": "358420454764969994",
     "name": "The Binding of Isaac: Rebirth",
-    "exe": "roomeditor\\roomeditor.exe",
+    "exe": "isaacanimationeditor\\isaacanimationeditor.exe",
     "adult": false,
     "args": null
   },
@@ -247,7 +247,7 @@
   {
     "id": "358425751197974528",
     "name": "Diablo III",
-    "exe": "diablo iii.exe",
+    "exe": "diablo iii64.exe",
     "adult": false,
     "args": null
   },
@@ -261,7 +261,7 @@
   {
     "id": "359507724196773888",
     "name": "The Elder Scrolls V: Skyrim",
-    "exe": "skyrimlauncher.exe",
+    "exe": "tesv.exe",
     "adult": false,
     "args": null
   },
@@ -303,7 +303,7 @@
   {
     "id": "359509007423242240",
     "name": "The Sims 4",
-    "exe": "ts4_x64.exe",
+    "exe": "ts4_dx9_x64.exe",
     "adult": false,
     "args": null
   },
@@ -317,14 +317,14 @@
   {
     "id": "359509387670192128",
     "name": "Stardew Valley",
-    "exe": "stardew valley.exe",
+    "exe": "stardew valley\\stardew valley.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "359509500199436288",
     "name": "DARK SOULS III",
-    "exe": "game\\darksoulsiii.exe",
+    "exe": "darksoulsiii.exe",
     "adult": false,
     "args": null
   },
@@ -352,7 +352,7 @@
   {
     "id": "359510095811444736",
     "name": "MapleStory",
-    "exe": "maple\\maplestory.exe",
+    "exe": "maplestory\\maplestory.exe",
     "adult": false,
     "args": null
   },
@@ -366,14 +366,14 @@
   {
     "id": "359510373361254400",
     "name": "Half-Life 2",
-    "exe": "hl2.exe",
+    "exe": "hl2hl2.exe",
     "adult": false,
     "args": "-game hl2"
   },
   {
     "id": "359510680459673610",
     "name": "Battlefield 4",
-    "exe": "bf4.exe",
+    "exe": "bf4cte.exe",
     "adult": false,
     "args": null
   },
@@ -387,7 +387,7 @@
   {
     "id": "359511228445491200",
     "name": "Guild Wars 2",
-    "exe": "gw2.exe",
+    "exe": "gw2-64.exe",
     "adult": false,
     "args": null
   },
@@ -429,7 +429,7 @@
   {
     "id": "363409000399634432",
     "name": "Trove",
-    "exe": "trove\\glyphclientapp.exe",
+    "exe": "trove.exe",
     "adult": false,
     "args": null
   },
@@ -555,7 +555,7 @@
   {
     "id": "363412302998929418",
     "name": "Mount & Blade: Warband",
-    "exe": "wse\\wseloader.exe",
+    "exe": "mountblade warband\\battlesizer.exe",
     "adult": false,
     "args": null
   },
@@ -569,7 +569,7 @@
   {
     "id": "363412528308682752",
     "name": "PlanetSide 2",
-    "exe": "planetside2_x86.exe",
+    "exe": "planetside2_x64.exe",
     "adult": false,
     "args": null
   },
@@ -583,7 +583,7 @@
   {
     "id": "363412728888557568",
     "name": "Call of Duty: World at War",
-    "exe": "codwaw.exe",
+    "exe": "codwawmp.exe",
     "adult": false,
     "args": null
   },
@@ -618,7 +618,7 @@
   {
     "id": "363413225578037248",
     "name": "Elite: Dangerous",
-    "exe": "elitedangerous.exe",
+    "exe": "elitedangerous32.exe",
     "adult": false,
     "args": null
   },
@@ -639,7 +639,7 @@
   {
     "id": "363413389021675530",
     "name": "Age of Empires II: HD Edition",
-    "exe": "empires2.exe",
+    "exe": "aok hd.exe",
     "adult": false,
     "args": null
   },
@@ -716,7 +716,7 @@
   {
     "id": "363414173457186826",
     "name": "Portal",
-    "exe": "hl2p.exe",
+    "exe": "portal\\hl2.exe",
     "adult": false,
     "args": null
   },
@@ -730,7 +730,7 @@
   {
     "id": "363414443129831444",
     "name": "Dragon Ball: Xenoverse 2",
-    "exe": "dbxv2.exe",
+    "exe": "db xenoverse 2\\xv2skilcreat.exe",
     "adult": false,
     "args": null
   },
@@ -786,7 +786,7 @@
   {
     "id": "363425113879609344",
     "name": "Metal Gear Solid V: The Phantom Pain",
-    "exe": "mgsvmgo.exe",
+    "exe": "mgsvtpp.exe",
     "adult": false,
     "args": null
   },
@@ -856,7 +856,7 @@
   {
     "id": "363427270024626176",
     "name": "Call of Duty: Black Ops II",
-    "exe": "t6mp.exe",
+    "exe": "t6zm.exe",
     "adult": false,
     "args": null
   },
@@ -1003,7 +1003,7 @@
   {
     "id": "363430045970071552",
     "name": "Naruto Shippuden: Ultimate Ninja Storm 4",
-    "exe": "nsuns4.exe",
+    "exe": "naruto shippuden ultimate ninja storm 4\\x360ce_x64.exe",
     "adult": false,
     "args": null
   },
@@ -1073,7 +1073,7 @@
   {
     "id": "363430739456425994",
     "name": "The Sims 3",
-    "exe": "ts3w.exe",
+    "exe": "ts3.exe",
     "adult": false,
     "args": null
   },
@@ -1192,7 +1192,7 @@
   {
     "id": "363445589247131668",
     "name": "ROBLOX",
-    "exe": "roblox.exe",
+    "exe": "robloxplayerbeta.exe",
     "adult": false,
     "args": null
   },
@@ -1255,7 +1255,7 @@
   {
     "id": "376180518749995028",
     "name": "Darkest Dungeon",
-    "exe": "darkest.exe",
+    "exe": "_windows\\darkest.exe",
     "adult": false,
     "args": null
   },
@@ -1388,7 +1388,7 @@
   {
     "id": "387402920238383122",
     "name": "Elsword",
-    "exe": "elsword.exe",
+    "exe": "data\\x2.exe",
     "adult": false,
     "args": null
   },
@@ -1458,7 +1458,7 @@
   {
     "id": "406637677199360030",
     "name": "Assassin's Creed IV Black Flag",
-    "exe": "ac4bfmp.exe",
+    "exe": "ac4bfsp.exe",
     "adult": false,
     "args": null
   },
@@ -1724,7 +1724,7 @@
   {
     "id": "424719708785344525",
     "name": "Warcraft III: Reign of Chaos",
-    "exe": "war3.exe",
+    "exe": "wc3.exe",
     "adult": false,
     "args": null
   },
@@ -1752,7 +1752,7 @@
   {
     "id": "425435232788021258",
     "name": "Assassin's Creed Brotherhood",
-    "exe": "acbmp.exe",
+    "exe": "acbsp.exe",
     "adult": false,
     "args": null
   },
@@ -1843,7 +1843,7 @@
   {
     "id": "425438403819995145",
     "name": "For Honor",
-    "exe": "forhonor.exe",
+    "exe": "for honor\\forhonor.exe",
     "adult": false,
     "args": null
   },
@@ -1913,7 +1913,7 @@
   {
     "id": "425439633917214720",
     "name": "Rocksmith 2014 Edition: Remastered",
-    "exe": "rocksmith2014\\rocksmith2014.exe",
+    "exe": "rocksmith2014.exe",
     "adult": false,
     "args": null
   },
@@ -1948,7 +1948,7 @@
   {
     "id": "425440004983226378",
     "name": "Tom Clancy's Ghost Recon: Future Soldier",
-    "exe": "future soldier.exe",
+    "exe": "future soldier dx11.exe",
     "adult": false,
     "args": null
   },
@@ -2011,7 +2011,7 @@
   {
     "id": "425440642173239296",
     "name": "Ori and the Blind Forest: Definitive Edition",
-    "exe": "oride.exe",
+    "exe": "ori.exe",
     "adult": false,
     "args": null
   },
@@ -2060,14 +2060,14 @@
   {
     "id": "425441408242155530",
     "name": "Rebel Galaxy",
-    "exe": "rebelgalaxysteam.exe",
+    "exe": "rebelgalaxygog.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "425441448410873866",
     "name": "Fractured Space",
-    "exe": "spacegame-win64-shipping.exe",
+    "exe": "fractured space.exe",
     "adult": false,
     "args": null
   },
@@ -2130,7 +2130,7 @@
   {
     "id": "425442091666243594",
     "name": "Dead Island: Riptide - Definitive Edition",
-    "exe": "deadislandriptidegame.exe",
+    "exe": "deadislandgame_x86_rwdi.exe",
     "adult": false,
     "args": null
   },
@@ -2165,7 +2165,7 @@
   {
     "id": "425442324495990784",
     "name": "Metro 2033 Redux",
-    "exe": "metro 2033 redux\\metro.exe",
+    "exe": "metro2033.exe",
     "adult": false,
     "args": null
   },
@@ -2263,7 +2263,7 @@
   {
     "id": "425443045417156618",
     "name": "BioShock Remastered",
-    "exe": "bioshockhd.exe",
+    "exe": "bioshock.exe",
     "adult": false,
     "args": null
   },
@@ -2333,7 +2333,7 @@
   {
     "id": "425449323346657290",
     "name": "LEGO Marvel's Avengers",
-    "exe": "legomarvelavengers.exe",
+    "exe": "legomarvelavengers_dx11.exe",
     "adult": false,
     "args": null
   },
@@ -2529,14 +2529,14 @@
   {
     "id": "425454572778291210",
     "name": "The Guild: Gold Edition",
-    "exe": "europa1400gold_tl.exe",
+    "exe": "europa1400gold.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "425454613827813376",
     "name": "Homesick",
-    "exe": "homesick\\binaries\\win32\\udk.exe",
+    "exe": "homesick\\binaries\\win64\\udk.exe",
     "adult": false,
     "args": null
   },
@@ -2578,7 +2578,7 @@
   {
     "id": "425454826042818590",
     "name": "Bridge Constructor: Stunts",
-    "exe": "bridge constructor stunts\\wmv9codec.exe",
+    "exe": "bridge_constructor_stunts.exe",
     "adult": false,
     "args": null
   },
@@ -2886,7 +2886,7 @@
   {
     "id": "425457887339348005",
     "name": "Justice League VR: The Complete Experience",
-    "exe": "justice_league_vr_the_complete_experience-1.0.0-htcvive-release.exe",
+    "exe": "justice_league_vr_the_complete_experience-1.0.1-htcvive-release.exe",
     "adult": false,
     "args": null
   },
@@ -2928,7 +2928,7 @@
   {
     "id": "425458238595661854",
     "name": "SUPERHOT",
-    "exe": "superhot.exe",
+    "exe": "superhot\\sh.exe",
     "adult": false,
     "args": null
   },
@@ -3089,7 +3089,7 @@
   {
     "id": "425460002761998347",
     "name": "Heroes of Might and Magic V",
-    "exe": "h5_game.exe",
+    "exe": "bina1\\testapp.exe",
     "adult": false,
     "args": null
   },
@@ -3278,7 +3278,7 @@
   {
     "id": "425723123187449856",
     "name": "Tormentor X Punisher",
-    "exe": "tormentorxpunishergit.exe",
+    "exe": "tormentorxpunisher.exe",
     "adult": false,
     "args": null
   },
@@ -3390,7 +3390,7 @@
   {
     "id": "425748090889175050",
     "name": "Dungeon Defenders II",
-    "exe": "dungeon defenders 2\\dundef2\\binaries\\win64\\dundefgame.exe",
+    "exe": "dungeon defenders 2\\dundef2\\binaries\\win32\\dungeondefenders.exe",
     "adult": false,
     "args": null
   },
@@ -3418,7 +3418,7 @@
   {
     "id": "425748544134053888",
     "name": "Far Cry 3",
-    "exe": "farcry3.exe",
+    "exe": "farcry3_d3d11.exe",
     "adult": false,
     "args": null
   },
@@ -3523,7 +3523,7 @@
   {
     "id": "425777093628919828",
     "name": "Call of Duty: Modern Warfare 2",
-    "exe": "iw4sp.exe",
+    "exe": "iw4mp.exe",
     "adult": false,
     "args": null
   },
@@ -3544,7 +3544,7 @@
   {
     "id": "425777491068715018",
     "name": "Darwin Project",
-    "exe": "the darwin project\\darwin.exe",
+    "exe": "darwin-win64-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -3579,7 +3579,7 @@
   {
     "id": "425778010222886912",
     "name": "Assetto Corsa",
-    "exe": "assettocorsa\\acs.exe",
+    "exe": "assettocorsa\\acshowroom.exe",
     "adult": false,
     "args": null
   },
@@ -3677,7 +3677,7 @@
   {
     "id": "426524936060928011",
     "name": "Sniper Elite 4",
-    "exe": "sniperelite4.exe",
+    "exe": "sniperelite4_dx11.exe",
     "adult": false,
     "args": null
   },
@@ -3719,7 +3719,7 @@
   {
     "id": "426525250549973022",
     "name": "Street Fighter V",
-    "exe": "streetfighterv.exe",
+    "exe": "streetfightervbeta-win64-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -3831,7 +3831,7 @@
   {
     "id": "427033332065370132",
     "name": "Age of Mythology: Extended Edition",
-    "exe": "age of mythology\\aomx.exe",
+    "exe": "aomx.exe",
     "adult": false,
     "args": null
   },
@@ -3873,7 +3873,7 @@
   {
     "id": "428053249120010241",
     "name": "Just Survive",
-    "exe": "just survive\\h1z1_be.exe",
+    "exe": "just survive\\h1z1.exe",
     "adult": false,
     "args": null
   },
@@ -3908,14 +3908,14 @@
   {
     "id": "428053768630960128",
     "name": "Tree of Savior",
-    "exe": "release\\client_tos_x64.exe",
+    "exe": "patch\\updater_downloader.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "428054061502300160",
     "name": "Star Wars: Jedi Knight - Jedi Academy",
-    "exe": "jamp.exe",
+    "exe": "jasp.exe",
     "adult": false,
     "args": null
   },
@@ -3985,7 +3985,7 @@
   {
     "id": "428057046701572106",
     "name": "Medieval II: Total War",
-    "exe": "medieval2.exe",
+    "exe": "divide_and_conquer\\large address aware.exe",
     "adult": false,
     "args": null
   },
@@ -4083,7 +4083,7 @@
   {
     "id": "443156343227023370",
     "name": "Star Wars: Empire at War - Gold Pack",
-    "exe": "starwarsg.exe",
+    "exe": "sweaw.exe",
     "adult": false,
     "args": null
   },
@@ -4426,14 +4426,14 @@
   {
     "id": "448384255131779073",
     "name": "Star Trek Online",
-    "exe": "star trek online.exe",
+    "exe": "star trek online\\live\\x64\\gameclient.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "448448339386695690",
     "name": "Warhammer 40,000: Dawn of War - Soulstorm",
-    "exe": "dawn of war soulstorm\\dow mod manager 1.3.exe",
+    "exe": "dawn of war soulstorm\\dow mod manager v2.1.5.exe",
     "adult": false,
     "args": null
   },
@@ -4489,7 +4489,7 @@
   {
     "id": "449738622619353088",
     "name": "Dark Souls: Remastered",
-    "exe": "darksouls.exe",
+    "exe": "dark souls remastered\\darksoulsitemrandomizer.exe",
     "adult": false,
     "args": null
   },
@@ -4531,7 +4531,7 @@
   {
     "id": "450145899063017492",
     "name": "Mirror's Edge",
-    "exe": "mirrorsedge.exe",
+    "exe": "physx\\physx_systemsoftware.exe",
     "adult": false,
     "args": null
   },
@@ -4643,7 +4643,7 @@
   {
     "id": "451539197044719616",
     "name": "The Elder Scrolls III: Morrowind",
-    "exe": "morrowind\\mgexegui.exe",
+    "exe": "morrowind.exe",
     "adult": false,
     "args": null
   },
@@ -4664,7 +4664,7 @@
   {
     "id": "451539349142634496",
     "name": "MechWarrior Online",
-    "exe": "mwoclient.exe",
+    "exe": "mechwarrioronline.exe",
     "adult": false,
     "args": null
   },
@@ -4839,7 +4839,7 @@
   {
     "id": "451541058497675294",
     "name": "Vindictus",
-    "exe": "vindictus.exe",
+    "exe": "vindictus_x64.exe",
     "adult": false,
     "args": null
   },
@@ -4909,7 +4909,7 @@
   {
     "id": "451541936872882186",
     "name": "Moonbase Alpha",
-    "exe": "physx\\physx_8.10.29_systemsoftware.exe",
+    "exe": "moonbasealphagame.exe",
     "adult": false,
     "args": null
   },
@@ -4937,7 +4937,7 @@
   {
     "id": "451542394857455638",
     "name": "The Lab",
-    "exe": "win64\\secretshop.exe",
+    "exe": "thelab.exe",
     "adult": false,
     "args": null
   },
@@ -4986,7 +4986,7 @@
   {
     "id": "451543839665160232",
     "name": "Rise of Nations: Extended Edition",
-    "exe": "rise of nations\\patriots.exe",
+    "exe": "rise of nations\\riseofnations.exe",
     "adult": false,
     "args": null
   },
@@ -5056,7 +5056,7 @@
   {
     "id": "451544305509859328",
     "name": "Digimon Masters Online",
-    "exe": "digimon masters online - steam\\gdmo.exe",
+    "exe": "dmlauncher.exe",
     "adult": false,
     "args": null
   },
@@ -5147,7 +5147,7 @@
   {
     "id": "451544729763446784",
     "name": "Rift",
-    "exe": "rift.exe",
+    "exe": "rift_x64.exe",
     "adult": false,
     "args": null
   },
@@ -5175,7 +5175,7 @@
   {
     "id": "451544889331679242",
     "name": "Phantasy Star Online 2",
-    "exe": "pso2.exe",
+    "exe": "pso2_bin\\gameguard.des.exe",
     "adult": false,
     "args": null
   },
@@ -5266,14 +5266,14 @@
   {
     "id": "451545729253638144",
     "name": "Fallout 3: Game of the Year Edition",
-    "exe": "fallout 3 goty\\games for windows live disabler.exe",
+    "exe": "fallout 3 goty\\4gb_patch.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "451545786946289664",
     "name": "RUNNING WITH RIFLES",
-    "exe": "runningwithrifles\\rwr_config.exe",
+    "exe": "rwr_game.exe",
     "adult": false,
     "args": null
   },
@@ -5336,7 +5336,7 @@
   {
     "id": "451546229252554752",
     "name": "Mass Effect 2",
-    "exe": "masseffect2.exe",
+    "exe": "mass effect 2\\binaries\\me2game.exe",
     "adult": false,
     "args": null
   },
@@ -5413,14 +5413,14 @@
   {
     "id": "451546783668109322",
     "name": "EverQuest",
-    "exe": "eqgame.exe",
+    "exe": "eqclient.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "451546896167731220",
     "name": "WildStar",
-    "exe": "wildstar64.exe",
+    "exe": "wildstar.exe",
     "adult": false,
     "args": null
   },
@@ -5462,7 +5462,7 @@
   {
     "id": "451547323596537866",
     "name": "America's Army: Proving Grounds",
-    "exe": "aagame.exe",
+    "exe": "binaries\\pbsvc_pg.exe",
     "adult": false,
     "args": null
   },
@@ -5532,7 +5532,7 @@
   {
     "id": "451549001511075860",
     "name": "S.K.I.L.L.: Special Force 2",
-    "exe": "games\\specialforce2\\binaries\\win32\\sf2.exe",
+    "exe": "skill\\dfubg.exe",
     "adult": false,
     "args": null
   },
@@ -5609,7 +5609,7 @@
   {
     "id": "451551201604141056",
     "name": "Injustice 2",
-    "exe": "retail\\injustice2.exe",
+    "exe": "injustice2.exe",
     "adult": false,
     "args": null
   },
@@ -5658,7 +5658,7 @@
   {
     "id": "451552107825201152",
     "name": "Secret World Legends",
-    "exe": "secretworldlegendsdx11.exe",
+    "exe": "secretworldlegends.exe",
     "adult": false,
     "args": null
   },
@@ -5707,7 +5707,7 @@
   {
     "id": "451553710275821568",
     "name": "Quake Live",
-    "exe": "quakelive.exe",
+    "exe": "quakelive_steam.exe",
     "adult": false,
     "args": null
   },
@@ -5910,7 +5910,7 @@
   {
     "id": "452313101539475456",
     "name": "Train Simulator Classic",
-    "exe": "railworks\\utilities.exe",
+    "exe": "railworks.exe",
     "adult": false,
     "args": null
   },
@@ -6085,7 +6085,7 @@
   {
     "id": "457283942475759662",
     "name": "Pirate101",
-    "exe": "pirate101.exe",
+    "exe": "pirate.exe",
     "adult": false,
     "args": null
   },
@@ -6134,7 +6134,7 @@
   {
     "id": "457300834393391104",
     "name": "Lineage II",
-    "exe": "l2.exe",
+    "exe": "lineageii.exe",
     "adult": false,
     "args": null
   },
@@ -6449,7 +6449,7 @@
   {
     "id": "463227448167890944",
     "name": "Devil May Cry 4: Special Edition",
-    "exe": "devilmaycry4specialedition.exe",
+    "exe": "devilmaycry4_dx10.exe",
     "adult": false,
     "args": null
   },
@@ -6533,7 +6533,7 @@
   {
     "id": "465536900560584714",
     "name": "Warhammer 40,000: Dawn of War - Dark Crusade",
-    "exe": "dawn of war dark crusade\\darkcrusade.exe",
+    "exe": "dawn of war dark crusade\\graphicsconfig.exe",
     "adult": false,
     "args": null
   },
@@ -6631,7 +6631,7 @@
   {
     "id": "468254179987685406",
     "name": "Islands of Nyne: Battle Royale",
-    "exe": "ionbranch.exe",
+    "exe": "ionbranch_be.exe",
     "adult": false,
     "args": null
   },
@@ -6967,21 +6967,21 @@
   {
     "id": "479169486583496704",
     "name": "Overcooked! 2",
-    "exe": "overcooked! 2\\overcooked2.exe",
+    "exe": "overcooked2.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "479334869462417409",
     "name": "Fallout 2",
-    "exe": "fallout2hr.exe",
+    "exe": "fallout2.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "479694330441891840",
     "name": "Deathgarden: BLOODHARVEST",
-    "exe": "win64\\theexit_be.exe",
+    "exe": "theexit-win64-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -7156,7 +7156,7 @@
   {
     "id": "484892481452769290",
     "name": "Insurgency: Sandstorm",
-    "exe": "win64\\insurgencyclient-win64-test.exe",
+    "exe": "insurgencyclient-win64-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -7303,14 +7303,14 @@
   {
     "id": "489917602412494878",
     "name": "System Shock 2",
-    "exe": "system shock2.exe",
+    "exe": "shock2.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "490260586899177491",
     "name": "Shadow of the Tomb Raider",
-    "exe": "shadow of the tomb raider\\sottr.exe",
+    "exe": "sottr.exe",
     "adult": false,
     "args": null
   },
@@ -7464,7 +7464,7 @@
   {
     "id": "492113873508368403",
     "name": "Abzu",
-    "exe": "win64\\abzugame-win64-shipping.exe",
+    "exe": "abzugame-win64-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -7485,14 +7485,14 @@
   {
     "id": "492116330909138974",
     "name": "Darkest Hour: A Hearts of Iron Game",
-    "exe": "darkest hour.exe",
+    "exe": "darkest houren.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "492117546728816640",
     "name": "Europa Universalis III",
-    "exe": "eu3.exe",
+    "exe": "eu3game.exe",
     "adult": false,
     "args": null
   },
@@ -7541,7 +7541,7 @@
   {
     "id": "492131222135373834",
     "name": "Star Wars: Galactic Battlegrounds Saga",
-    "exe": "battlegrounds_x1.exe",
+    "exe": "battlegrounds_cc.exe",
     "adult": false,
     "args": null
   },
@@ -7576,7 +7576,7 @@
   {
     "id": "492135944179286068",
     "name": "Star Wars: Jedi Knight II - Jedi Outcast",
-    "exe": "jk2mvmp_x64.exe",
+    "exe": "jk2mvmp_x86.exe",
     "adult": false,
     "args": null
   },
@@ -7702,7 +7702,7 @@
   {
     "id": "495079795252527104",
     "name": "Blacklight: Retribution",
-    "exe": "foxgame-win32-shipping.exe",
+    "exe": "win32\\foxgame-win32-shipping_be.exe",
     "adult": false,
     "args": null
   },
@@ -7786,7 +7786,7 @@
   {
     "id": "496525141467987991",
     "name": "Age of Conan",
-    "exe": "ageofconandx10.exe",
+    "exe": "ageofconan.exe",
     "adult": false,
     "args": null
   },
@@ -7828,7 +7828,7 @@
   {
     "id": "496529322039836681",
     "name": "Anarchy Online",
-    "exe": "anarchyonline.exe",
+    "exe": "anarchy.exe",
     "adult": false,
     "args": null
   },
@@ -7989,21 +7989,21 @@
   {
     "id": "496544716997918750",
     "name": "CABAL Online",
-    "exe": "cabalmain.exe",
+    "exe": "cabal.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "496546499346432010",
     "name": "Call of Duty 2",
-    "exe": "cod2sp_s.exe",
+    "exe": "cod2mp_s.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "496547399599390730",
     "name": "Call of Juarez",
-    "exe": "coj.exe",
+    "exe": "coj_dx10.exe",
     "adult": false,
     "args": null
   },
@@ -8059,7 +8059,7 @@
   {
     "id": "496553014220554270",
     "name": "Combat Arms",
-    "exe": "combatarms.exe",
+    "exe": "combat arms\\engine.exe",
     "adult": false,
     "args": null
   },
@@ -8080,7 +8080,7 @@
   {
     "id": "496558661041127444",
     "name": "Cook, Serve, Delicious!",
-    "exe": "csdgogbuild.exe",
+    "exe": "csdsteambuild.exe",
     "adult": false,
     "args": null
   },
@@ -8220,14 +8220,14 @@
   {
     "id": "496572658255790080",
     "name": "Diablo II",
-    "exe": "diablo ii\\game.exe",
+    "exe": "diablo ii.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "496573404002910227",
     "name": "Diadra Empty",
-    "exe": "diadraempty.exe",
+    "exe": "diadraempty154lw.exe",
     "adult": false,
     "args": null
   },
@@ -8325,7 +8325,7 @@
   {
     "id": "496579889063919616",
     "name": "Dungeons & Dragons Online",
-    "exe": "dndclient.exe",
+    "exe": "dndclient64.exe",
     "adult": false,
     "args": null
   },
@@ -8409,7 +8409,7 @@
   {
     "id": "496757203596869652",
     "name": "FINAL FANTASY VIII",
-    "exe": "ff8_fr.exe",
+    "exe": "ff8_es.exe",
     "adult": false,
     "args": null
   },
@@ -8486,7 +8486,7 @@
   {
     "id": "496762504291155998",
     "name": "Frontier",
-    "exe": "frontier.exe",
+    "exe": "frontier\\client.jar.exe",
     "adult": false,
     "args": null
   },
@@ -8675,14 +8675,14 @@
   {
     "id": "496846515382517770",
     "name": "Krosmaster Arena",
-    "exe": "krosmaster.exe",
+    "exe": "krosmaster arena.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "496846777023070218",
     "name": "Landmark",
-    "exe": "landmark64.exe",
+    "exe": "landmark\\launchpad.exe",
     "adult": false,
     "args": null
   },
@@ -8773,14 +8773,14 @@
   {
     "id": "496852775406141450",
     "name": "Marvel Heroes",
-    "exe": "marvelheroes2015.exe",
+    "exe": "marvelheroesomega.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "496853043103662080",
     "name": "Marvel Heroes 2016",
-    "exe": "marvelheroes2016.exe",
+    "exe": "marvelheroesomega.exe",
     "adult": false,
     "args": null
   },
@@ -8878,7 +8878,7 @@
   {
     "id": "498941421814939648",
     "name": "Men of War: Assault Squad",
-    "exe": "mow_assault_squad_ed.exe",
+    "exe": "mow_assualt_squad.exe",
     "adult": false,
     "args": null
   },
@@ -8990,7 +8990,7 @@
   {
     "id": "498980232938651648",
     "name": "Peggle Deluxe",
-    "exe": "peggle deluxe\\peggle.exe",
+    "exe": "peggle\\popcapgame1.exe",
     "adult": false,
     "args": null
   },
@@ -9081,7 +9081,7 @@
   {
     "id": "498986815227822080",
     "name": "Prime World",
-    "exe": "pw_game.exe",
+    "exe": "prime world\\castle\\castle.exe",
     "adult": false,
     "args": null
   },
@@ -9438,7 +9438,7 @@
   {
     "id": "504032449173389372",
     "name": "Shantae and the Pirate's Curse",
-    "exe": "shantaecurse.exe",
+    "exe": "shantae and the pirate's curse.exe",
     "adult": false,
     "args": null
   },
@@ -9536,7 +9536,7 @@
   {
     "id": "504052730042646579",
     "name": "Steins;Gate",
-    "exe": "steins;gate\\game.exe",
+    "exe": "steinsgate.exe",
     "adult": false,
     "args": null
   },
@@ -9606,7 +9606,7 @@
   {
     "id": "504056709015404544",
     "name": "SWAT 4",
-    "exe": "swat4x.exe",
+    "exe": "swat4.exe",
     "adult": false,
     "args": null
   },
@@ -9641,7 +9641,7 @@
   {
     "id": "504057675286315028",
     "name": "Tales from the Borderlands",
-    "exe": "tales from the borderlands\\borderlands.exe",
+    "exe": "b24f49f9-d7fe-40b6-8f4d-65b0c6bf6a6b\\borderlands.exe",
     "adult": false,
     "args": null
   },
@@ -9655,7 +9655,7 @@
   {
     "id": "504067053481754634",
     "name": "Tales of Monkey Island",
-    "exe": "monkeyisland103.exe",
+    "exe": "monkeyisland104.exe",
     "adult": false,
     "args": null
   },
@@ -9704,7 +9704,7 @@
   {
     "id": "504074409628401690",
     "name": "The Elder Scrolls IV: Oblivion",
-    "exe": "oblivion\\oblivion.exe",
+    "exe": "oblivion.exe",
     "adult": false,
     "args": null
   },
@@ -9746,7 +9746,7 @@
   {
     "id": "504077629175889923",
     "name": "The Secret World",
-    "exe": "secretworldlegendsdx11.exe",
+    "exe": "thesecretworlddx11.exe",
     "adult": false,
     "args": null
   },
@@ -9942,7 +9942,7 @@
   {
     "id": "504087375618506772",
     "name": "Wolfenstein: The Old Blood",
-    "exe": "wolfoldblood_x32.exe",
+    "exe": "wolfenstein the old blood\\wolfoldblood_x64.exe",
     "adult": false,
     "args": null
   },
@@ -10383,7 +10383,7 @@
   {
     "id": "505142782654939150",
     "name": "マジカルバトルアリーナNEXT・幻想郷空閃姫",
-    "exe": "mban_m.exe",
+    "exe": "mban_f.exe",
     "adult": false,
     "args": null
   },
@@ -10509,7 +10509,7 @@
   {
     "id": "505490756782391338",
     "name": "Infantry",
-    "exe": "infantry.exe",
+    "exe": "tds.exe",
     "adult": false,
     "args": null
   },
@@ -10551,7 +10551,7 @@
   {
     "id": "505494914872770583",
     "name": "PCSX2",
-    "exe": "pcsx2-r5875.exe",
+    "exe": "pcsx2.exe",
     "adult": false,
     "args": null
   },
@@ -10600,14 +10600,14 @@
   {
     "id": "505497930292133908",
     "name": "Return to Castle Wolfenstein",
-    "exe": "wolfmp.exe",
+    "exe": "wolfsp.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "505498725297422351",
     "name": "Rosenkreuzstilette",
-    "exe": "rks_e.exe",
+    "exe": "rks.exe",
     "adult": false,
     "args": null
   },
@@ -10712,7 +10712,7 @@
   {
     "id": "505506583304732695",
     "name": "Touhou Fuujinroku: Mountain of Faith",
-    "exe": "th10.exe",
+    "exe": "th10e.exe",
     "adult": false,
     "args": null
   },
@@ -10747,7 +10747,7 @@
   {
     "id": "505513477645926430",
     "name": "Double Spoiler: Touhou Bunkachou",
-    "exe": "th125e.exe",
+    "exe": "th125.exe",
     "adult": false,
     "args": null
   },
@@ -10761,21 +10761,21 @@
   {
     "id": "505514028341395495",
     "name": "Touhou Shinreibyou: Ten Desires",
-    "exe": "th13.exe",
+    "exe": "th13e.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "505514368520290305",
     "name": "Touhou 13.5 Hopeless Mascarade",
-    "exe": "th135.exe",
+    "exe": "th135e.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "505514719885393960",
     "name": "Touhou Kishinjou: Double Dealing Character",
-    "exe": "th14.exe",
+    "exe": "th14e.exe",
     "adult": false,
     "args": null
   },
@@ -10789,14 +10789,14 @@
   {
     "id": "505515610667614232",
     "name": "Touhou 14.5: Urban Legend in Limbo",
-    "exe": "th145e.exe",
+    "exe": "th145.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "505515966289936393",
     "name": "Touhou Kanjuden: Legacy of Lunatic Kingdom",
-    "exe": "th15.exe",
+    "exe": "th15e.exe",
     "adult": false,
     "args": null
   },
@@ -10831,7 +10831,7 @@
   {
     "id": "505517882873085952",
     "name": "Touhou Kaeizuka: Phantasmagoria of Flower View",
-    "exe": "th09.exe",
+    "exe": "th09e.exe",
     "adult": false,
     "args": null
   },
@@ -10866,7 +10866,7 @@
   {
     "id": "505519505091592222",
     "name": "The Legend of Heroes: Trails in the Sky SC",
-    "exe": "ed6_win2_dx9.exe",
+    "exe": "ed6_win2.exe",
     "adult": false,
     "args": null
   },
@@ -10992,7 +10992,7 @@
   {
     "id": "542075586886107149",
     "name": "Apex Legends",
-    "exe": "r5apex_dx12.exe",
+    "exe": "apex legends\\r5apex.exe",
     "adult": false,
     "args": null
   },
@@ -11125,7 +11125,7 @@
   {
     "id": "905961880789590076",
     "name": "Forza Horizon 5",
-    "exe": "forzahorizon5\\forzahorizon5.exe",
+    "exe": "forzahorizon5.exe",
     "adult": false,
     "args": null
   },
@@ -11244,7 +11244,7 @@
   {
     "id": "1124349969906815007",
     "name": "tModLoader",
-    "exe": "launchutils\\busybox64.exe",
+    "exe": "tmodloader\\tmodloader64bit.exe",
     "adult": false,
     "args": null
   },
@@ -12014,7 +12014,7 @@
   {
     "id": "1124351909235539978",
     "name": "STALZONE",
-    "exe": "bin\\stalcraftw.exe",
+    "exe": "bin\\stalzonew.exe",
     "adult": false,
     "args": null
   },
@@ -23333,7 +23333,7 @@
   {
     "id": "1124355056964219010",
     "name": "A Plague Tale: Requiem",
-    "exe": "aplaguetalerequiem\\aplaguetalerequiem_x64.exe",
+    "exe": "a plague tale requiem\\aplaguetalerequiem_x64.exe",
     "adult": false,
     "args": null
   },
@@ -26889,7 +26889,7 @@
   {
     "id": "1124356041870692452",
     "name": "Bits & Bops",
-    "exe": "bits & bops demo\\bits & bops.exe",
+    "exe": "bits & bops\\bits & bops.exe",
     "adult": false,
     "args": null
   },
@@ -28582,7 +28582,7 @@
   },
   {
     "id": "1124356487108640859",
-    "name": "Stick RPG 2: Director's Cut",
+    "name": "Stick RPG 2",
     "exe": "stick rpg 2\\stick rpg 2 director's cut.exe",
     "adult": false,
     "args": null
@@ -35247,7 +35247,7 @@
   {
     "id": "1124358238738071633",
     "name": "Card Shark",
-    "exe": "card shark demo\\card_shark.exe",
+    "exe": "card shark\\card_shark.exe",
     "adult": false,
     "args": null
   },
@@ -45012,7 +45012,7 @@
   {
     "id": "1129504165727584307",
     "name": "Resident Evil 2",
-    "exe": "biohazard re2 z\\re2.exe",
+    "exe": "resident evil 2  biohazard re2\\re2.exe",
     "adult": false,
     "args": null
   },
@@ -45271,7 +45271,7 @@
   {
     "id": "1129504320161861763",
     "name": "Knockout City",
-    "exe": "knockoutcity\\knockoutcity.exe",
+    "exe": "knockout city\\knockoutcity.exe",
     "adult": false,
     "args": null
   },
@@ -45299,7 +45299,7 @@
   {
     "id": "1129504331570356244",
     "name": "World War Z: Aftermath",
-    "exe": "pc\\wwzretailegs.exe",
+    "exe": "pc\\wwzretail.exe",
     "adult": false,
     "args": null
   },
@@ -45698,7 +45698,7 @@
   {
     "id": "1129504740301086812",
     "name": "Tanki Online",
-    "exe": "tanki online — копия\\tanki online.exe",
+    "exe": "tanki online5\\tanki onlinet.exe",
     "adult": false,
     "args": null
   },
@@ -47819,7 +47819,7 @@
   {
     "id": "1137125502985961543",
     "name": "Baldur's Gate III",
-    "exe": "bin\\bg3_dx11.exe",
+    "exe": "bin\\bg3.exe",
     "adult": false,
     "args": null
   },
@@ -48498,7 +48498,7 @@
   {
     "id": "1161771169482014932",
     "name": "Scribble It!",
-    "exe": "win64\\scribbleit-win64-shipping.exe",
+    "exe": "scribble it!\\scribbleit.exe",
     "adult": false,
     "args": null
   },
@@ -48533,7 +48533,7 @@
   {
     "id": "1161772431447441519",
     "name": "F1 2020",
-    "exe": "f1 2020\\f1_2020_dx12.exe",
+    "exe": "f1 2020\\f1_2020.exe",
     "adult": false,
     "args": null
   },
@@ -48568,7 +48568,7 @@
   {
     "id": "1161792892520632350",
     "name": "F1 2019",
-    "exe": "f1 2019\\f1_2019_dx12.exe",
+    "exe": "f1 2019\\f1_2019.exe",
     "adult": false,
     "args": null
   },
@@ -48603,7 +48603,7 @@
   {
     "id": "1161797410889142353",
     "name": "POLYGON",
-    "exe": "polygon\\polygon.exe",
+    "exe": "win64\\polygon-win64-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -48694,7 +48694,7 @@
   {
     "id": "1162092801320833024",
     "name": "Five Nights at Freddy's 4",
-    "exe": "fivenightsatfreddys4\\fivenightsatfreddys4.exe",
+    "exe": "fivenightsatfreddys4\\halloweenedition.exe",
     "adult": false,
     "args": null
   },
@@ -48855,7 +48855,7 @@
   {
     "id": "1163197033901998190",
     "name": "Assassin's Creed Mirage",
-    "exe": "assassin's creed mirage\\acmirage.exe",
+    "exe": "assassinscreedmirage\\acmirage.exe",
     "adult": false,
     "args": null
   },
@@ -48939,7 +48939,7 @@
   {
     "id": "1163961885264191538",
     "name": "Call of Duty: Ghosts",
-    "exe": "call of duty ghosts\\iw6sp64_ship.exe",
+    "exe": "call of duty ghosts\\iw6mp64_ship.exe",
     "adult": false,
     "args": null
   },
@@ -49016,7 +49016,7 @@
   {
     "id": "1164696488589406288",
     "name": "FIFA 19",
-    "exe": "fifa19\\fifa19.exe",
+    "exe": "fifa 19\\fifa19.exe",
     "adult": false,
     "args": null
   },
@@ -49226,7 +49226,7 @@
   {
     "id": "1168655587958063205",
     "name": "Dragonheir: Silent Gods",
-    "exe": "dragonheir.exe",
+    "exe": "dragonheir silent gods\\dragonheir.exe",
     "adult": false,
     "args": null
   },
@@ -49625,7 +49625,7 @@
   {
     "id": "1174042614765457508",
     "name": "Mafia: Definitive Edition",
-    "exe": "mafia - definitive edition\\mafiadefinitiveedition.exe",
+    "exe": "mafia definitive edition\\mafiadefinitiveedition.exe",
     "adult": false,
     "args": null
   },
@@ -49982,7 +49982,7 @@
   {
     "id": "1180205756998488064",
     "name": "Old School RuneScape",
-    "exe": "old school runescape\\client\\osclient.exe",
+    "exe": "win64\\osclient.exe",
     "adult": false,
     "args": null
   },
@@ -50129,7 +50129,7 @@
   {
     "id": "1182713227491147776",
     "name": "THE FINALS",
-    "exe": "wingdk\\discovery-e.exe",
+    "exe": "win64\\discovery.exe",
     "adult": false,
     "args": null
   },
@@ -50521,7 +50521,7 @@
   {
     "id": "1190715968968724570",
     "name": "LEGO 2K Drive",
-    "exe": "win64\\lego2kdrive-win64-shipping.exe",
+    "exe": "lego2kdrive\\lego2kdrive.exe",
     "adult": false,
     "args": null
   },
@@ -50563,7 +50563,7 @@
   {
     "id": "1191652130323431514",
     "name": "Snowbreak: Containment Zone",
-    "exe": "snowbreak\\game\\binaries\\win64\\game.exe",
+    "exe": "snowbreak\\game\\game\\binaries\\win64\\game.exe",
     "adult": false,
     "args": null
   },
@@ -50829,7 +50829,7 @@
   {
     "id": "1197827812623650866",
     "name": "Palworld",
-    "exe": "win64\\palworld-win64-shipping.exe",
+    "exe": "wingdk\\palworld-wingdk-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -53174,7 +53174,7 @@
   {
     "id": "1232330186826055781",
     "name": "Artifact Seeker: Resurrection",
-    "exe": "artifact seeker resurrection\\artifactseeker.exe",
+    "exe": "artifact seekerprologue\\artifactseeker.exe",
     "adult": false,
     "args": null
   },
@@ -54280,7 +54280,7 @@
   {
     "id": "1246780369986916445",
     "name": "Doomsday: Last Survivors",
-    "exe": "doomsdaylastsurvivors\\doomsday.exe",
+    "exe": "doomsday last survivors\\doomsday.exe",
     "adult": false,
     "args": null
   },
@@ -55225,7 +55225,7 @@
   {
     "id": "1257422382000246785",
     "name": "SUPERVIVE",
-    "exe": "loki-win64-shipping.exe",
+    "exe": "win64\\loki.exe",
     "adult": false,
     "args": null
   },
@@ -55911,7 +55911,7 @@
   {
     "id": "1266877867619516416",
     "name": "Arma Reforger",
-    "exe": "arma reforger\\armareforger_be.exe",
+    "exe": "arma reforger experimental\\armareforgersteam_experimental.exe",
     "adult": false,
     "args": null
   },
@@ -56177,7 +56177,7 @@
   {
     "id": "1270832378310557788",
     "name": "Skull and Bones",
-    "exe": "skull and bones\\skullandbones.exe",
+    "exe": "skull and bones (open beta)\\skullandbones.exe",
     "adult": false,
     "args": null
   },
@@ -56653,7 +56653,7 @@
   {
     "id": "1275695911804338277",
     "name": "inZOI",
-    "exe": "win64\\inzoi-win64-shipping.exe",
+    "exe": "win64\\blueclient-win64-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -57087,7 +57087,7 @@
   {
     "id": "1281297844858257418",
     "name": "Warhammer 40,000: Space Marine II",
-    "exe": "warhammer 40000 space marine 2.exe",
+    "exe": "pc\\warhammer 40000 space marine 2 - retail.exe",
     "adult": false,
     "args": null
   },
@@ -57213,7 +57213,7 @@
   {
     "id": "1283180127655559310",
     "name": "FINAL FANTASY XVI",
-    "exe": "finalfantasyxvi\\ffxvi.exe",
+    "exe": "final fantasy xvi demo\\ffxvi_demo.exe",
     "adult": false,
     "args": null
   },
@@ -59796,7 +59796,7 @@
   {
     "id": "1314395942253756416",
     "name": "Marvel Rivals",
-    "exe": "win64\\marvel-win64-test.exe",
+    "exe": "win64\\marvel-win64-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -59831,7 +59831,7 @@
   {
     "id": "1314682894106497096",
     "name": "Delta Force",
-    "exe": "win64\\deltaforceclient-win64-shipping.exe",
+    "exe": "deltaforceclient.exe",
     "adult": false,
     "args": null
   },
@@ -60923,7 +60923,7 @@
   {
     "id": "1328876348361412619",
     "name": "Path of Exile 2",
-    "exe": "path of exile 2 - poe2_production\\pathofexile.exe",
+    "exe": "path of exile 2 taiwan\\pathofexilesteam.exe",
     "adult": false,
     "args": null
   },
@@ -61483,7 +61483,7 @@
   {
     "id": "1334654007884517509",
     "name": "SMITE 2",
-    "exe": "windows\\hemingway.exe",
+    "exe": "win64\\hemingway-win64-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -61497,7 +61497,7 @@
   {
     "id": "1334660101658906724",
     "name": "Kingdom Hearts HD 1.5 + 2.5 ReMIX",
-    "exe": "kingdom hearts -hd 1.5+2.5 remix-\\waittitleproject.exe",
+    "exe": "kingdom hearts -hd 1.5+2.5 remix-\\kingdom hearts re_chain of memories.exe",
     "adult": false,
     "args": null
   },
@@ -61532,14 +61532,14 @@
   {
     "id": "1334672060328443984",
     "name": "EA Sports FC 25",
-    "exe": "ea sports fc 25\\fc25_trial.exe",
+    "exe": "ea sports fc 25\\fc25.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "1334673895453884566",
     "name": "Vampire Survivors",
-    "exe": "vampire survivors\\vampiresurvivors.exe",
+    "exe": "vampiresurvivors\\vampiresurvivors.exe",
     "adult": false,
     "args": null
   },
@@ -62183,7 +62183,7 @@
   {
     "id": "1342435759440924712",
     "name": "Dune: Awakening",
-    "exe": "win64\\dunesandbox-win64-shipping.exe",
+    "exe": "win64\\dunesandbox-win64-test.exe",
     "adult": false,
     "args": null
   },
@@ -63177,7 +63177,7 @@
   {
     "id": "1353866015351636098",
     "name": "Schedule I",
-    "exe": "schedule i\\schedule i.exe",
+    "exe": "schedule i demo\\schedule i free sample.exe",
     "adult": false,
     "args": null
   },
@@ -64206,7 +64206,7 @@
   {
     "id": "1364888648839073802",
     "name": "Clair Obscur: Expedition 33",
-    "exe": "win64\\sandfall-win64-shipping.exe",
+    "exe": "wingdk\\sandfall-wingdk-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -65298,7 +65298,7 @@
   {
     "id": "1374812553909108889",
     "name": "SPLITGATE: Arena Reloaded",
-    "exe": "win64\\portalwars2client-win64-shipping.exe",
+    "exe": "splitgate 2\\launcher.exe",
     "adult": false,
     "args": null
   },
@@ -66040,7 +66040,7 @@
   {
     "id": "1381709506140049538",
     "name": "Wildgate",
-    "exe": "win64\\nebulaclientsteam-win64-shipping.exe",
+    "exe": "win64\\nebulaclientegs-win64-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -67727,7 +67727,7 @@
   {
     "id": "1400191300573331578",
     "name": "Call of Duty: Modern Warfare III",
-    "exe": "call of duty modern warfare iii\\cod23-cod.exe",
+    "exe": "cod23\\cod23-cod.exe",
     "adult": false,
     "args": null
   },
@@ -68168,14 +68168,14 @@
   {
     "id": "1402416659771424808",
     "name": "Borderlands",
-    "exe": "borderlands\\borderlands.exe",
+    "exe": "binaries\\borderlands.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "1402416661880901673",
     "name": "Verdun",
-    "exe": "1914-1918 series.exe",
+    "exe": "verdun.exe",
     "adult": false,
     "args": null
   },
@@ -68196,7 +68196,7 @@
   {
     "id": "1402416669384511498",
     "name": "Assassin's Creed III",
-    "exe": "ac3mp.exe",
+    "exe": "ac3sp.exe",
     "adult": false,
     "args": null
   },
@@ -68287,7 +68287,7 @@
   {
     "id": "1402416723835228231",
     "name": "Flash Flash Revolution",
-    "exe": "ffr.exe",
+    "exe": "r3air.exe",
     "adult": false,
     "args": null
   },
@@ -68490,7 +68490,7 @@
   {
     "id": "1402416810229497917",
     "name": "Starbound",
-    "exe": "starbound.exe",
+    "exe": "starbound_opengl.exe",
     "adult": false,
     "args": null
   },
@@ -68602,7 +68602,7 @@
   {
     "id": "1402416862494724238",
     "name": "Darksiders: Warmastered Edition",
-    "exe": "darksiderspc.exe",
+    "exe": "darksiders1.exe",
     "adult": false,
     "args": null
   },
@@ -68658,7 +68658,7 @@
   {
     "id": "1402416882711007272",
     "name": "System Shock: Enhanced Edition",
-    "exe": "sshock.exe",
+    "exe": "system shock.exe",
     "adult": false,
     "args": null
   },
@@ -68812,7 +68812,7 @@
   {
     "id": "1402416959819350078",
     "name": "Satisfactory",
-    "exe": "factorygame-win64-shipping.exe",
+    "exe": "win64\\factorygame-win64-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -68903,7 +68903,7 @@
   {
     "id": "1402416999887278220",
     "name": "Subnautica: Below Zero",
-    "exe": "subnauticazero.exe",
+    "exe": "subnauticazero\\subnauticazero.exe",
     "adult": false,
     "args": null
   },
@@ -68924,7 +68924,7 @@
   {
     "id": "1402417012747014304",
     "name": "Tom Clancy's Ghost Recon: Breakpoint",
-    "exe": "grb.exe",
+    "exe": "ghost recon breakpoint\\grb.exe",
     "adult": false,
     "args": null
   },
@@ -68966,14 +68966,14 @@
   {
     "id": "1402417023643815966",
     "name": "The Outer Worlds",
-    "exe": "win64\\indianaepicgamestore-win64-shipping.exe",
+    "exe": "indianaepicgamestore-win64-shipping.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "1402417025086918736",
     "name": "Bloodstained: Ritual of the Night",
-    "exe": "bloodstainedrotn-win64-shipping.exe",
+    "exe": "win64\\bloodstainedrotn-win64-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -68987,14 +68987,14 @@
   {
     "id": "1402417028207218738",
     "name": "MORDHAU",
-    "exe": "win64\\mordhau-win64-shipping.exe",
+    "exe": "mordhau-win64-shipping.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "1402417029490938006",
     "name": "Dota Underlords",
-    "exe": "underlords.exe",
+    "exe": "win64\\underlords.exe",
     "adult": false,
     "args": null
   },
@@ -69029,7 +69029,7 @@
   {
     "id": "1402417049891770438",
     "name": "Rise of Agon",
-    "exe": "darkfall roa\\data\\darkfall.exe",
+    "exe": "darkfall_roa.exe",
     "adult": false,
     "args": null
   },
@@ -69043,14 +69043,14 @@
   {
     "id": "1402417067193532587",
     "name": "Star Wars Jedi: Fallen Order",
-    "exe": "win64\\starwarsjedifallenorder.exe",
+    "exe": "starwarsjedifallenorder.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "1402417128568524821",
     "name": "Spellcraft",
-    "exe": "spellcraft dev (staging)\\unitycrashhandler64.exe",
+    "exe": "spellcraft-gamelab\\game\\run\\tap.exe",
     "adult": false,
     "args": null
   },
@@ -69078,7 +69078,7 @@
   {
     "id": "1402417584921645207",
     "name": "Warhammer: Vermintide 2",
-    "exe": "binaries\\vermintide2.exe",
+    "exe": "binaries_dx12\\vermintide2_dx12.exe",
     "adult": false,
     "args": null
   },
@@ -69099,14 +69099,14 @@
   {
     "id": "1402417856599162940",
     "name": "A Hat in Time",
-    "exe": "hatintimegame.exe",
+    "exe": "binaries\\modmanager.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "1402417933225033759",
     "name": "Hunt: Showdown 1896",
-    "exe": "win_x64\\huntgame.exe",
+    "exe": "hunt showdown\\hunt.exe",
     "adult": false,
     "args": null
   },
@@ -69127,7 +69127,7 @@
   {
     "id": "1402418028167299153",
     "name": "XCOM: Enemy Unknown",
-    "exe": "win32\\xcomgame.exe",
+    "exe": "xcomgame.exe",
     "adult": false,
     "args": null
   },
@@ -69239,7 +69239,7 @@
   {
     "id": "1402418132219596941",
     "name": "Realm Royale Reforged",
-    "exe": "realm royale\\binaries\\win64\\realm.exe",
+    "exe": "realm royale\\binaries\\win64\\realmeac.exe",
     "adult": false,
     "args": null
   },
@@ -69260,14 +69260,14 @@
   {
     "id": "1402418151467258038",
     "name": "VVVVVV",
-    "exe": "vvvvvv\\vvvvvv.exe",
+    "exe": "vvvvvv.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "1402418154541678746",
     "name": "Age of Empires: Definitive Edition",
-    "exe": "age of empires - definitive edition\\aoede_s.exe",
+    "exe": "aoede_s.exe",
     "adult": false,
     "args": null
   },
@@ -69407,7 +69407,7 @@
   {
     "id": "1402418344912752671",
     "name": "Terraria",
-    "exe": "terraria.exe",
+    "exe": "terraria\\terraria.exe",
     "adult": false,
     "args": null
   },
@@ -69421,7 +69421,7 @@
   {
     "id": "1402418374851432561",
     "name": "Black Desert",
-    "exe": "blackdesert64.exe",
+    "exe": "blackdesert32.exe",
     "adult": false,
     "args": null
   },
@@ -69435,7 +69435,7 @@
   {
     "id": "1402418385052237944",
     "name": "PUBG LITE",
-    "exe": "pubglite\\launcher_updater.exe",
+    "exe": "pubglite.exe",
     "adult": false,
     "args": null
   },
@@ -69456,7 +69456,7 @@
   {
     "id": "1402418429973233786",
     "name": "Death Stranding: Director's Cut",
-    "exe": "death stranding\\ds.exe",
+    "exe": "ds.exe",
     "adult": false,
     "args": null
   },
@@ -69477,7 +69477,7 @@
   {
     "id": "1402418440685486130",
     "name": "Among Us",
-    "exe": "among us - kopie\\among us.exe",
+    "exe": "among us\\among us.exe",
     "adult": false,
     "args": null
   },
@@ -69498,7 +69498,7 @@
   {
     "id": "1402418473128427573",
     "name": "Call of Duty: Modern Warfare II",
-    "exe": "_retail_\\cod22\\cod22-cod.exe",
+    "exe": "_retail_\\sp22\\sp22-cod.exe",
     "adult": false,
     "args": null
   },
@@ -69512,9 +69512,9 @@
   {
     "id": "1402418491272986635",
     "name": "Minecraft",
-    "exe": "minecraft.windows.exe",
+    "exe": "javaw.exe",
     "adult": false,
-    "args": null
+    "args": "net.minecraft.client.main.Main"
   },
   {
     "id": "1402418499694891049",
@@ -69568,7 +69568,7 @@
   {
     "id": "1402418569765195826",
     "name": "Bloons Adventure Time TD",
-    "exe": "btdadventuretime.exe",
+    "exe": "bloons adventure time td\\btdadventuretime.exe",
     "adult": false,
     "args": null
   },
@@ -69596,14 +69596,14 @@
   {
     "id": "1402418586244612216",
     "name": "Warframe",
-    "exe": "warframe.x64.exe",
+    "exe": "warframe.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "1402418594532298837",
     "name": "Rust",
-    "exe": "rust\\rustclient.exe",
+    "exe": "rustclient.exe",
     "adult": false,
     "args": null
   },
@@ -69638,7 +69638,7 @@
   {
     "id": "1402418662232817724",
     "name": "Warface",
-    "exe": "gamecenter\\bin32release\\game.exe",
+    "exe": "bin64release\\game.exe",
     "adult": false,
     "args": null
   },
@@ -69659,7 +69659,7 @@
   {
     "id": "1402418688694423743",
     "name": "Omega Strikers",
-    "exe": "prometheus\\prometheus.exe",
+    "exe": "win64\\prometheus-win64-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -69680,7 +69680,7 @@
   {
     "id": "1402418696126992445",
     "name": "League of Legends",
-    "exe": "league of legends.exe",
+    "exe": "garenaloltw\\gamedata\\apps\\loltw\\lol.exe",
     "adult": false,
     "args": null
   },
@@ -69708,14 +69708,14 @@
   {
     "id": "1402418714716143646",
     "name": "Grand Theft Auto V Legacy",
-    "exe": "gta5.exe",
+    "exe": "grand theft auto v\\gta5_be.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "1402418717781921935",
     "name": "PUBG: BATTLEGROUNDS",
-    "exe": "tslgame_be.exe",
+    "exe": "win64\\tslgame_uc.exe",
     "adult": false,
     "args": null
   },
@@ -70436,7 +70436,7 @@
   {
     "id": "1417993715611467826",
     "name": "2XKO",
-    "exe": "2xko\\live\\lion\\binaries\\win64\\lion-win64-shipping.exe",
+    "exe": "2xko\\live\\lion\\binaries\\win64\\lion.exe",
     "adult": false,
     "args": null
   },
@@ -70751,7 +70751,7 @@
   {
     "id": "1423760184819581080",
     "name": "Call of Duty: Black Ops 7",
-    "exe": "sp25-cod.exe",
+    "exe": "cod25-cod.exe",
     "adult": false,
     "args": null
   },
@@ -70828,7 +70828,7 @@
   {
     "id": "1425690433018925056",
     "name": "Battlefield 6",
-    "exe": "battlefield 6 event\\bf6event.exe",
+    "exe": "battlefield 6\\bf6.exe",
     "adult": false,
     "args": null
   },
@@ -70842,7 +70842,7 @@
   {
     "id": "1425830254437601330",
     "name": "Blue Protocol: Star Resonance",
-    "exe": "bpsr\\bpsr_steam.exe",
+    "exe": "bpsr.exe",
     "adult": false,
     "args": null
   },
@@ -70954,7 +70954,7 @@
   {
     "id": "1428223713928810496",
     "name": "March of Giants",
-    "exe": "thelineclient.exe",
+    "exe": "thelineclient-win64-shipping.exe",
     "adult": false,
     "args": null
   },
@@ -71437,7 +71437,7 @@
   {
     "id": "1437509662303059998",
     "name": "Where Winds Meet",
-    "exe": "wwm.exe",
+    "exe": "where winds meet.exe",
     "adult": false,
     "args": null
   },
@@ -71689,7 +71689,7 @@
   {
     "id": "1443287416030105692",
     "name": "Storm Lancers",
-    "exe": "stormlancersdemosteam-win64-shipping.exe",
+    "exe": "stormlancersdemo.exe",
     "adult": false,
     "args": null
   },
@@ -73096,7 +73096,7 @@
   {
     "id": "1506678780612050944",
     "name": "Ragnarok: The New World",
-    "exe": "roworldsea\\downloader.exe",
+    "exe": "roworld\\game.exe",
     "adult": false,
     "args": null
   },
@@ -73117,14 +73117,14 @@
   {
     "id": "1511443377927880775",
     "name": "Call of Duty: Modern Warfare 4",
-    "exe": "cod26-cod.exe",
+    "exe": "sp26-cod.exe",
     "adult": false,
     "args": null
   },
   {
     "id": "1512292746889662576",
     "name": "Onimusha: Way of the Sword",
-    "exe": "onimushawots.exe",
+    "exe": "onimushawots_demo.exe",
     "adult": false,
     "args": null
   },
@@ -73199,6 +73199,13 @@
     "args": null
   },
   {
+    "id": "1547021075949293579",
+    "name": "Invokers: Titan Legacy",
+    "exe": "invokers.exe",
+    "adult": false,
+    "args": null
+  },
+  {
     "id": "1551691007387508878",
     "name": "Gravebound",
     "exe": "gravebound.exe",
@@ -73208,7 +73215,7 @@
   {
     "id": "1552168352116641822",
     "name": "Clive Barker's Hellraiser: Revival",
-    "exe": "hellraiser-win64-shipping.exe",
+    "exe": "hellraiser.exe",
     "adult": false,
     "args": null
   },
@@ -73222,7 +73229,7 @@
   {
     "id": "1553234742529364018",
     "name": "World of Warcraft: Forever",
-    "exe": "_forever_\\wow.exe",
+    "exe": "wowb.exe",
     "adult": false,
     "args": null
   },
