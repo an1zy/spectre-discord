@@ -1,44 +1,87 @@
 <div align="center">
 
 # SPECTRE
-by [an1zy](https://github.com/an1zy)
+### High-Performance Discord Activity & Badge Virtualization Engine
+*Created by [an1zy](https://github.com/an1zy)*
 
-<p>
+<p align="center">
   <b>English</b> · <a href="README.ru.md">Русский</a>
 </p>
 
-[![Platform](https://img.shields.io/badge/Platform-Windows_10%20%7C%2011-0078D6?style=flat-square&logo=windows&logoColor=white)](https://microsoft.com)
-[![License](https://img.shields.io/badge/License-MIT-EBAF8E?style=flat-square)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.8+-white?style=flat-square&logo=python&logoColor=141414)](https://python.org)
+<p align="center">
+  <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://microsoft.com"><img src="https://img.shields.io/badge/Platform-Windows_10_%7C_11-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Platform"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-EBAF8E?style=for-the-badge" alt="License"></a>
+  <a href="https://discord.com"><img src="https://img.shields.io/badge/Discord-API_v9-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"></a>
+</p>
 
-<br/>
+```
+  ███████╗██████╗ ███████╗ ██████╗████████╗██████╗ ███████╗
+  ██╔════╝██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔══██╗██╔════╝
+  ███████╗██████╔╝█████╗  ██║        ██║   ██████╔╝█████╗  
+  ╚════██║██╔═══╝ ██╔══╝  ██║        ██║   ██╔══██╗██╔══╝  
+  ███████║██║     ███████╗╚██████╗   ██║   ██║  ██║███████╗
+  ╚══════╝╚═╝     ╚══════╝ ╚═════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝
+```
 
-<a href="https://github.com/an1zy/spectre-discord/releases/latest">
-  <img src="https://img.shields.io/badge/DOWNLOAD%20FOR%20WINDOWS%20(.EXE)-EBAF8E?style=for-the-badge&logo=windows&logoColor=141414" height="40" alt="Download" />
-</a>
+<p align="center">
+  <a href="https://github.com/an1zy/spectre-discord/releases/latest">
+    <img src="https://img.shields.io/badge/DOWNLOAD_FOR_WINDOWS-spectre__windows__x64.exe-EBAF8E?style=for-the-badge&logo=windows&logoColor=141414" height="42" alt="Download for Windows">
+  </a>
+</p>
 
-<p>
-  <b><a href="https://github.com/an1zy/spectre-discord/releases/latest">Latest Release (.exe)</a></b><br/>
-  Portable build. Download and run, no terminal or Python setup needed.
+<p align="center">
+  <b><a href="https://github.com/an1zy/spectre-discord/releases/latest">Go to Latest Release (.exe)</a></b><br/>
+  <i>Portable standalone build. No terminal or Python installation required.</i>
 </p>
 
 </div>
 
 ---
 
+## How It Works
+
+Discord desktop scans local running processes via standard Windows APIs (`EnumProcesses` and `GetWindowTextW`) and compares them against its public verified games database (`https://discord.com/api/v9/applications/detectable`).
+
+```
+┌────────────────────────┐         ┌────────────────────────┐
+│     SPECTRE Engine     │         │     Discord Client     │
+└───────────┬────────────┘         └───────────┬────────────┘
+            │                                  │
+    Spawns micro-dummy                         │
+    (WS_EX_TOOLWINDOW)                         │
+            │                                  │
+            ▼                                  │
+┌────────────────────────┐                     │
+│  Target Win32 Process  │ ◄─────── Scans OS process table
+│   (e.g., cs2.exe)      │          & window handles
+└────────────────────────┘                     │
+                                               ▼
+                                   ┌────────────────────────┐
+                                   │  Sends telemetry to    │
+                                   │  Discord backend       │
+                                   └────────────────────────┘
+```
+
+1. SPECTRE launches a 4 KB native binary (`dummy.exe`) configured with `WS_EX_TOOLWINDOW` and `WS_EX_NOACTIVATE`.
+2. Windows handles it as an active game process, but it renders completely offscreen (-10000, -10000) with **zero taskbar icons, zero focus stealing, and 0% CPU footprint**.
+3. Discord reads the process and registers activity without requiring accounts, tokens, or memory hacks.
+
+---
+
 ## Installation
 
-### Option 1: Standalone file (recommended)
+### Option 1: Standalone executable (recommended)
 
-1. Open your **Discord desktop app**.
-2. Download **[`spectre_windows_x64.exe`](https://github.com/an1zy/spectre-discord/releases/latest)** from the releases page.
-3. Run the executable and choose your mode.
+1. Open the **Discord desktop app**.
+2. Download **[`spectre_windows_x64.exe`](https://github.com/an1zy/spectre-discord/releases/latest)** from the releases section.
+3. Launch the file and choose your desired mode.
 
-*(If Windows SmartScreen appears, click "More info" → "Run anyway", as open-source indie tools do not carry paid Microsoft signing certificates).*
+*(If Windows SmartScreen appears, click "More info" → "Run anyway". Open-source independent binaries do not carry costly commercial Microsoft signing certificates).*
 
 ### Option 2: Run via console / from source
 
-If you prefer running directly from terminal or editing the code:
+If you prefer running from terminal or modifying the source code:
 
 ```bash
 git clone https://github.com/an1zy/spectre-discord.git
@@ -49,7 +92,7 @@ python main.py
 ```
 *(Or double-click `start.bat`)*
 
-To compile your own single executable:
+To package into a single standalone `.exe`:
 ```bash
 pip install pyinstaller
 python build_exe.py

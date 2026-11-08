@@ -1,28 +1,71 @@
 <div align="center">
 
 # SPECTRE
-by [an1zy](https://github.com/an1zy)
+### Виртуализация игровой активности и прокачка значков Discord
+*Автор: [an1zy](https://github.com/an1zy)*
 
-<p>
+<p align="center">
   <a href="README.md">English</a> · <b>Русский</b>
 </p>
 
-[![Платформа](https://img.shields.io/badge/Платформа-Windows_10%20%7C%2011-0078D6?style=flat-square&logo=windows&logoColor=white)](https://microsoft.com)
-[![Лицензия](https://img.shields.io/badge/Лицензия-MIT-EBAF8E?style=flat-square)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.8+-white?style=flat-square&logo=python&logoColor=141414)](https://python.org)
+<p align="center">
+  <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://microsoft.com"><img src="https://img.shields.io/badge/Platform-Windows_10_%7C_11-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Platform"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-EBAF8E?style=for-the-badge" alt="License"></a>
+  <a href="https://discord.com"><img src="https://img.shields.io/badge/Discord-API_v9-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"></a>
+</p>
 
-<br/>
+```
+  ███████╗██████╗ ███████╗ ██████╗████████╗██████╗ ███████╗
+  ██╔════╝██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔══██╗██╔════╝
+  ███████╗██████╔╝█████╗  ██║        ██║   ██████╔╝█████╗  
+  ╚════██║██╔═══╝ ██╔══╝  ██║        ██║   ██╔══██╗██╔══╝  
+  ███████║██║     ███████╗╚██████╗   ██║   ██║  ██║███████╗
+  ╚══════╝╚═╝     ╚══════╝ ╚═════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝
+```
 
-<a href="https://github.com/an1zy/spectre-discord/releases/latest">
-  <img src="https://img.shields.io/badge/СКАЧАТЬ%20ДЛЯ%20WINDOWS%20(.EXE)-EBAF8E?style=for-the-badge&logo=windows&logoColor=141414" height="40" alt="Скачать" />
-</a>
+<p align="center">
+  <a href="https://github.com/an1zy/spectre-discord/releases/latest">
+    <img src="https://img.shields.io/badge/DOWNLOAD_FOR_WINDOWS-spectre__windows__x64.exe-EBAF8E?style=for-the-badge&logo=windows&logoColor=141414" height="42" alt="Скачать для Windows">
+  </a>
+</p>
 
-<p>
-  <b><a href="https://github.com/an1zy/spectre-discord/releases/latest">Страница последнего релиза (.exe)</a></b><br/>
-  Готовая сборка. Терминал и Python не нужны: скачал и запустил.
+<p align="center">
+  <b><a href="https://github.com/an1zy/spectre-discord/releases/latest">Перейти к странице релизов (.exe)</a></b><br/>
+  <i>Готовая сборка. Терминал и Python не требуются: скачал и запустил.</i>
 </p>
 
 </div>
+
+---
+
+## Как это работает
+
+Приложение Discord сканирует запущенные процессы в Windows через стандартный системный API (`EnumProcesses` и `GetWindowTextW`) и сверяет их со своей официальной базой распознаваемых игр (`https://discord.com/api/v9/applications/detectable`).
+
+```
+┌────────────────────────┐         ┌────────────────────────┐
+│     SPECTRE Engine     │         │     Discord Client     │
+└───────────┬────────────┘         └───────────┬────────────┘
+            │                                  │
+    Запуск микро-пустышки                      │
+    (WS_EX_TOOLWINDOW)                         │
+            │                                  │
+            ▼                                  │
+┌────────────────────────┐                     │
+│  Целевой Win32 процесс │ ◄─────── Сканирует список процессов
+│   (например, cs2.exe)  │          и заголовки окон
+└────────────────────────┘                     │
+                                               ▼
+                                   ┌────────────────────────┐
+                                   │  Отправляет телеметрию │
+                                   │  на серверы Discord    │
+                                   └────────────────────────┘
+```
+
+1. SPECTRE создает легкую нативную микро-пустышку (`dummy.exe`, 4 КБ) с системными флагами `WS_EX_TOOLWINDOW` и `WS_EX_NOACTIVATE`.
+2. Windows видит полноценный процесс игры, но окно создается за границами экрана (-10000, -10000) **без значков на панели задач, без перехвата курсора и с 0% нагрузки на процессор**.
+3. Discord считывает имя процесса и активность без использования токенов, читов или инъекций в память.
 
 ---
 
