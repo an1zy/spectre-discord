@@ -1,25 +1,30 @@
-import time
-from typing import List, Dict, Any, Optional
+import os
+import sys
+
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
+from typing import List, Dict, Any
 
 from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
-from rich.progress import Progress, BarColumn, TextColumn, TimeRemainingColumn, SpinnerColumn
 from rich.text import Text
-from rich.layout import Layout
 from rich import box
 
-console = Console()
+# Warm Minimalist Palette (inspired by portfolio aesthetic)
+COLOR_ACCENT = "#EBAF8E"      # Warm peach / sand accent
+COLOR_DOT = "#E68A52"         # Warm amber-orange dot
+COLOR_WHITE = "#FFFFFF"       # Crisp white
+COLOR_MUTED = "#8C8C8C"       # Muted slate grey
+COLOR_DIM = "#5A5A5A"         # Subtle dark grey
+COLOR_BORDER = "#2E2E2E"      # Minimal dark border
 
-TITLE_ASCII = """[bold cyan]
-  ███████╗██████╗ ███████╗ ██████╗████████╗██████╗ ███████╗
-  ██╔════╝██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔══██╗██╔════╝
-  ███████╗██████╔╝█████╗  ██║        ██║   ██████╔╝█████╗  
-  ╚════██║██╔═══╝ ██╔══╝  ██║        ██║   ██╔══██╗██╔══╝  
-  ███████║██║     ███████╗╚██████╗   ██║   ██║  ██║███████╗
-  ╚══════╝╚═╝     ╚══════╝ ╚═════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝[/bold cyan]"""
-
-SUBTITLE = "[dim]DISCORD ACTIVITY & BADGE VIRTUALIZATION ENGINE // v3.0[/dim]"
+console = Console(force_terminal=True)
 
 
 def clear():
@@ -27,33 +32,48 @@ def clear():
 
 
 def make_header_panel(discord_online: bool, total_games: int, boosted: int) -> Panel:
-    status_text = "[bold green]ONLINE[/bold green]" if discord_online else "[bold red]OFFLINE (Discord not running)[/bold red]"
+    status_dot = f"[{COLOR_ACCENT}]●[/] [{COLOR_WHITE}]в сети[/]" if discord_online else f"[{COLOR_DIM}]○[/] [{COLOR_MUTED}]не запущен[/]"
     pct = (boosted / total_games * 100) if total_games else 0.0
 
-    info_table = Table.grid(padding=(0, 2))
-    info_table.add_column(style="dim", justify="right")
-    info_table.add_column(style="bold white")
-    info_table.add_column(style="dim", justify="right")
-    info_table.add_column(style="bold white")
+    header_table = Table.grid(expand=True)
+    header_table.add_column()
+    header_table.add_column(justify="right")
 
-    info_table.add_row(
-        "Discord IPC:", status_text,
-        "Database Index:", f"[cyan]{total_games:,}[/cyan] games"
-    )
-    info_table.add_row(
-        "Farmed Badges:", f"[green]{boosted:,}[/green] / {total_games:,} ([yellow]{pct:.1f}%[/yellow])",
-        "Target:", "[magenta]Mythic (10,000 games)[/magenta]"
+    header_table.add_row(
+        f"[{COLOR_DIM}]/[/] [bold {COLOR_WHITE}]spectre[/] [{COLOR_DIM}].dev[/]",
+        f"[{COLOR_DOT}]●[/] [{COLOR_MUTED}]discord activity engine[/]"
     )
 
-    header_content = Text.from_markup(f"{TITLE_ASCII}\n  {SUBTITLE}\n\n")
-    
-    table_wrapper = Table(show_header=False, box=None, padding=0)
-    table_wrapper.add_row(header_content)
-    table_wrapper.add_row(info_table)
+    content = Table.grid(padding=(0, 2), expand=True)
+    content.add_column()
+    content.add_row(header_table)
+    content.add_row(Text(""))
+    content.add_row(
+        f"[bold {COLOR_WHITE}]Виртуализация игровой активности.[/]\n"
+        f"[bold {COLOR_ACCENT}]Прокачка значков и времени в играх[/]"
+    )
+    content.add_row(Text(""))
+
+    # Bottom stats row
+    stats_table = Table.grid(padding=(0, 3))
+    stats_table.add_column(style=COLOR_MUTED)
+    stats_table.add_column(style=COLOR_WHITE)
+    stats_table.add_column(style=COLOR_MUTED)
+    stats_table.add_column(style=COLOR_WHITE)
+    stats_table.add_column(style=COLOR_MUTED)
+    stats_table.add_column(style=COLOR_WHITE)
+
+    stats_table.add_row(
+        "Discord:", status_dot,
+        "База тайтлов:", f"[bold {COLOR_WHITE}]{total_games:,}[/]",
+        "Прогресс значка:", f"[{COLOR_ACCENT}]{boosted:,}[/] / 10,000 [{COLOR_MUTED}]({pct:.1f}%)[/]"
+    )
+
+    content.add_row(stats_table)
 
     return Panel(
-        table_wrapper,
-        border_style="cyan",
+        content,
+        border_style=COLOR_BORDER,
         box=box.ROUNDED,
         padding=(1, 2)
     )
@@ -61,81 +81,84 @@ def make_header_panel(discord_online: bool, total_games: int, boosted: int) -> P
 
 def make_menu_table() -> Table:
     table = Table(
-        show_header=True,
-        header_style="bold cyan",
-        box=box.SIMPLE_HEAVY,
-        expand=True,
-        padding=(0, 1)
+        show_header=False,
+        box=None,
+        padding=(0, 1),
+        expand=True
     )
-    table.add_column("Key", style="bold yellow", width=6, justify="center")
-    table.add_column("Module", style="bold white", width=18)
-    table.add_column("Description", style="dim")
-    table.add_column("Target Metric", style="cyan", width=22)
+    table.add_column("Key", style=f"bold {COLOR_ACCENT}", width=6, justify="center")
+    table.add_column("Title", style=f"bold {COLOR_WHITE}", width=22)
+    table.add_column("Desc", style=COLOR_MUTED)
+    table.add_column("Badge", style=COLOR_ACCENT, justify="right", width=22)
 
     table.add_row(
-        "[1]", "VARIETY RUNNER",
-        "High-throughput batch cycle across 10,400+ Discord games",
-        "[bold green]Game Variety Badge[/bold green]"
+        "01", "Универсал (Variety)",
+        "Автоматический перебор 10 400+ игр батчами",
+        "Значок «Универсал»"
     )
     table.add_row(
-        "[2]", "MULTIPLIER",
-        "Parallel background execution (x20 concurrent game sessions)",
-        "[bold green]Game Time Multiplier[/bold green]"
+        "02", "Множитель часов",
+        "Параллельный запуск до 20 игр (умножение времени x20)",
+        "Значок «Время в играх»"
     )
     table.add_row(
-        "[3]", "HUMANIZER",
-        "Natural play session simulator with dynamic game switching & AFK breaks",
-        "[bold green]Stealth Organic Play[/bold green]"
+        "03", "Имитация игрока",
+        "Естественные игровые сессии со сменой игр и AFK",
+        "Беспалевный фарм"
     )
     table.add_row(
-        "[4]", "GAME FORGE",
-        "Generate custom or unreleased game processes (GTA VI, HL3, Silksong)",
-        "[bold magenta]Custom Rich Presence[/bold magenta]"
+        "04", "Кузница игр (Forge)",
+        "Кастомные процессы (GTA VI Alpha, Half-Life 3 и др.)",
+        "Кастомный статус"
     )
     table.add_row(
-        "[5]", "SINGLE SPOOF",
-        "Instant launch of any single game from Discord's verified database",
-        "[bold white]Status Spoof[/bold white]"
+        "05", "Одиночный запуск",
+        "Быстрый поиск и запуск любой игры из базы",
+        "Статус активности"
     )
     table.add_row(
-        "[6]", "TELEMETRY",
-        "View detailed badge progression stats and cache analytics",
-        "[dim]Analytics[/dim]"
+        "06", "Статистика",
+        "История обработанных игр и сброс прогресса",
+        "Аналитика"
     )
     table.add_row(
-        "[7]", "SYNC INDEX",
-        "Force re-fetch verified detectable titles from Discord REST API",
-        "[dim]Maintenance[/dim]"
+        "07", "Синхронизация",
+        "Обновить официальный список игр Discord",
+        "API обновление"
     )
     table.add_row(
-        "[0]", "EXIT",
-        "Graceful termination of all active virtual handles",
-        "[dim]System[/dim]"
+        "00", "Выход",
+        "Завершить работу всех виртуальных процессов",
+        ""
     )
 
-    return table
+    return Panel(
+        table,
+        border_style=COLOR_BORDER,
+        box=box.ROUNDED,
+        padding=(1, 1)
+    )
 
 
 def make_batch_table(batch_games: List[Dict[str, Any]], batch_num: int, total_batches: int) -> Table:
     table = Table(
-        title=f"[bold cyan]Active Process Batch #{batch_num} of {total_batches}[/bold cyan]",
-        box=box.ROUNDED,
-        header_style="bold magenta",
+        title=f"[{COLOR_MUTED}]Батч #{batch_num} из {total_batches}[/]",
+        box=box.SIMPLE,
+        show_header=True,
+        header_style=f"bold {COLOR_ACCENT}",
         expand=True
     )
-    table.add_column("#", style="dim", width=4, justify="center")
-    table.add_column("Game Title", style="bold white")
-    table.add_column("Virtual Executable", style="cyan")
-    table.add_column("Platform", style="dim", width=10, justify="center")
-    table.add_column("Status", style="bold green", width=12, justify="center")
+    table.add_column("#", style=COLOR_DIM, width=4, justify="center")
+    table.add_column("Игра", style=f"bold {COLOR_WHITE}")
+    table.add_column("Исполняемый файл", style=COLOR_MUTED)
+    table.add_column("Статус", style=COLOR_ACCENT, width=12, justify="center")
 
     for idx, g in enumerate(batch_games, 1):
         table.add_row(
             str(idx),
             g["name"][:45],
             g["exe"],
-            "Win32",
-            "[green]ACTIVE ●[/green]"
+            "● в игре"
         )
 
     return table
@@ -143,22 +166,23 @@ def make_batch_table(batch_games: List[Dict[str, Any]], batch_num: int, total_ba
 
 def make_multiplier_table(games: List[Dict[str, Any]]) -> Table:
     table = Table(
-        title=f"[bold magenta]Active Multiplier Farm ({len(games)} concurrent processes - {len(games)}x Speed)[/bold magenta]",
-        box=box.ROUNDED,
-        header_style="bold cyan",
+        title=f"[{COLOR_MUTED}]Запущено {len(games)} процессов параллельно (множитель {len(games)}x)[/]",
+        box=box.SIMPLE,
+        show_header=True,
+        header_style=f"bold {COLOR_ACCENT}",
         expand=True
     )
-    table.add_column("#", style="dim", width=4, justify="center")
-    table.add_column("Game Title", style="bold white")
-    table.add_column("Process Name", style="cyan")
-    table.add_column("Stream State", style="bold green", width=14, justify="center")
+    table.add_column("#", style=COLOR_DIM, width=4, justify="center")
+    table.add_column("Игра", style=f"bold {COLOR_WHITE}")
+    table.add_column("Процесс", style=COLOR_MUTED)
+    table.add_column("Поток", style=COLOR_ACCENT, width=12, justify="center")
 
     for idx, g in enumerate(games, 1):
         table.add_row(
             str(idx),
             g["name"],
             g.get("exe", "game.exe"),
-            "[green]STREAMING ●[/green]"
+            "● активен"
         )
 
     return table

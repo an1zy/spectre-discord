@@ -1,5 +1,13 @@
 import os
 import sys
+
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 import time
 import random
 from pathlib import Path
@@ -27,7 +35,12 @@ from ui import (
     make_header_panel,
     make_menu_table,
     make_batch_table,
-    make_multiplier_table
+    make_multiplier_table,
+    COLOR_ACCENT,
+    COLOR_WHITE,
+    COLOR_MUTED,
+    COLOR_DIM,
+    COLOR_BORDER
 )
 
 POPULAR_GAMES_PRESET = [
@@ -56,53 +69,57 @@ POPULAR_GAMES_PRESET = [
 
 def run_variety_mode(games: List[Dict[str, Any]], history: HistoryManager):
     clear()
-    console.print(Panel("[bold cyan]MODULE 01: VARIETY RUNNER // GAME VARIETY BADGE[/bold cyan]", border_style="cyan"))
+    console.print(Panel(
+        f"[bold {COLOR_WHITE}]Прокачка значка «Универсал»[/]\n"
+        f"[{COLOR_MUTED}]Автоматический перебор официальной базы игр батчами[/]",
+        border_style=COLOR_BORDER,
+        box=box.ROUNDED
+    ))
 
     if not is_discord_running():
-        console.print("[yellow][!] Warning: Discord desktop application is not detected in processes.[/yellow]")
-        console.print("[dim]Ensure Discord is running so game activity is captured.[/dim]")
-        if not Confirm.ask("Continue anyway?", default=True):
+        console.print(f"[{COLOR_ACCENT}]Предупреждение:[/] [{COLOR_MUTED}]Приложение Discord не запущено. Запустите Discord, чтобы засчитывались игры.[/]")
+        if not Confirm.ask("Продолжить?", default=True):
             return
 
     unboosted = [g for g in games if not history.is_boosted(g["id"])]
-    console.print(f"Games awaiting execution: [bold cyan]{len(unboosted):,}[/bold cyan]")
+    console.print(f"Осталось в очереди: [bold {COLOR_WHITE}]{len(unboosted):,}[/] игр")
 
-    if Confirm.ask("Filter out adult/erotic classified titles?", default=True):
+    if Confirm.ask("Исключить игры 18+ (Erotic / Adults Only)?", default=True):
         unboosted = [g for g in unboosted if not g["adult"]]
-        console.print(f"Queue size after 18+ filter: [bold cyan]{len(unboosted):,}[/bold cyan]")
+        console.print(f"Игр к прогону: [bold {COLOR_WHITE}]{len(unboosted):,}[/]")
 
     if not unboosted:
-        console.print("\n[bold green][✓] All available games in the database have been processed![/bold green]")
-        Prompt.ask("\nPress Enter to return")
+        console.print(f"\n[{COLOR_ACCENT}]Все доступные игры из базы уже пройдены.[/]")
+        Prompt.ask("\nНажмите Enter для возврата")
         return
 
-    batch_size = int(Prompt.ask("Concurrent batch size (games per cycle)", default="8"))
-    duration = int(Prompt.ask("Holding duration per batch (seconds)", default="15"))
+    batch_size = int(Prompt.ask("Игр в одном батче", default="8"))
+    duration = int(Prompt.ask("Секунд на один батч", default="15"))
 
     total_to_boost = len(unboosted)
     total_batches = (total_to_boost + batch_size - 1) // batch_size
     est_total_sec = total_batches * duration
 
-    console.print(f"\n[dim]Session Scope: [bold white]{total_batches:,}[/bold white] batches | [bold white]{batch_size}[/bold white] concurrent | [bold white]{duration}s[/bold white] hold | Est. duration: ~{est_total_sec // 3600}h {(est_total_sec % 3600) // 60}m[/dim]")
-    Prompt.ask("\nPress Enter to begin batch virtualization")
+    console.print(f"\n[{COLOR_MUTED}]Батчей: {total_batches:,} │ По {batch_size} шт. │ Задержка {duration}с │ Расчетное время: ~{est_total_sec // 3600} ч {(est_total_sec % 3600) // 60} мин[/]")
+    Prompt.ask(f"\nНажмите [{COLOR_ACCENT}]Enter[/] для старта")
 
     runner = SpooferRunner()
     current_index = 0
     start_time = time.time()
 
     progress = Progress(
-        SpinnerColumn("dots", style="bold cyan"),
-        TextColumn("[bold cyan]{task.description}"),
-        BarColumn(bar_width=35, style="cyan", complete_style="bold green"),
-        TextColumn("[progress.percentage]{task.percentage:>3.1f}%"),
-        TextColumn("•"),
-        TextColumn("[bold white]{task.completed}/{task.total} games"),
-        TextColumn("•"),
+        SpinnerColumn(style=COLOR_ACCENT),
+        TextColumn(f"[bold {COLOR_WHITE}]{{task.description}}"),
+        BarColumn(bar_width=25, style=COLOR_DIM, complete_style=COLOR_ACCENT),
+        TextColumn(f"[{COLOR_ACCENT}]{{task.percentage:>3.1f}}%"),
+        TextColumn(f"[{COLOR_MUTED}]•[/]"),
+        TextColumn(f"[{COLOR_WHITE}]{{task.completed}}/{{task.total}}[/]"),
+        TextColumn(f"[{COLOR_MUTED}]•[/]"),
         TimeRemainingColumn(),
         console=console
     )
 
-    task_id = progress.add_task("Total Progression", total=total_to_boost)
+    task_id = progress.add_task("Общий прогресс", total=total_to_boost)
 
     try:
         for batch_num in range(1, total_batches + 1):
@@ -115,29 +132,25 @@ def run_variety_mode(games: List[Dict[str, Any]], history: HistoryManager):
             speed = (current_index / (elapsed / 60)) if elapsed > 10 else 0.0
 
             stats_panel = Panel(
-                f"[bold cyan]Batch {batch_num}/{total_batches}[/bold cyan] │ "
-                f"Elapsed: [white]{elapsed // 60:02d}:{elapsed % 60:02d}[/white] │ "
-                f"Speed: [green]{speed:.1f} games/min[/green] │ "
-                f"[dim](Press Ctrl+C to safely pause)[/dim]",
-                border_style="dim",
-                box=box.HORIZONTALS
+                f"Батч [{COLOR_WHITE}]{batch_num}/{total_batches}[/] │ "
+                f"Время: [{COLOR_WHITE}]{elapsed // 60:02d}:{elapsed % 60:02d}[/] │ "
+                f"Скорость: [{COLOR_ACCENT}]{speed:.1f} игр/мин[/] │ "
+                f"[{COLOR_DIM}]Ctrl+C для паузы[/]",
+                border_style=COLOR_BORDER,
+                box=box.ROUNDED
             )
             console.print(stats_panel)
             console.print(progress)
 
-            # Spawn virtual processes
             for g in batch_games:
                 runner.launch_game(g)
 
-            # Display active batch table
             batch_table = make_batch_table(batch_games, batch_num, total_batches)
             console.print(batch_table)
 
-            # Hold countdown
             for _ in range(duration * 10):
                 time.sleep(0.1)
 
-            # Terminate and record
             runner.kill_batch()
             for g in batch_games:
                 history.mark_boosted(g["id"], g["name"])
@@ -146,45 +159,49 @@ def run_variety_mode(games: List[Dict[str, Any]], history: HistoryManager):
             current_index += len(batch_games)
             progress.update(task_id, advance=len(batch_games))
 
-        console.print("\n[bold green][✓] Session complete! All queued titles virtualized.[/bold green]")
+        console.print(f"\n[bold {COLOR_ACCENT}]Сессия успешно завершена.[/]")
     except KeyboardInterrupt:
-        console.print("\n\n[bold yellow][!] Interrupted by user. Gracefully terminating virtual processes...[/bold yellow]")
+        console.print(f"\n\n[{COLOR_MUTED}]Остановка по запросу. Прогресс сохранен.[/]")
     finally:
         runner.cleanup_temp()
         history.save()
-        console.print("[green][✓] Virtual handles cleaned up and history saved.[/green]")
-        Prompt.ask("\nPress Enter to return to menu")
+        console.print(f"[{COLOR_MUTED}]Процессы завершены, файлы очищены.[/]")
+        Prompt.ask("\nНажмите Enter для возврата")
 
 
 def run_hour_farm_mode(games: List[Dict[str, Any]]):
     clear()
-    console.print(Panel("[bold magenta]MODULE 02: MULTIPLIER // GAME TIME BADGE BOOSTER[/bold magenta]", border_style="magenta"))
+    console.print(Panel(
+        f"[bold {COLOR_WHITE}]Фарм «Времени в играх»[/]\n"
+        f"[{COLOR_MUTED}]Параллельный запуск процессов для умножения часов[/]",
+        border_style=COLOR_BORDER,
+        box=box.ROUNDED
+    ))
 
     if not is_discord_running():
-        console.print("[yellow][!] Warning: Discord client not detected.[/yellow]")
+        console.print(f"[{COLOR_ACCENT}]Предупреждение:[/] Discord не запущен.")
 
-    console.print("Select farm preset:")
-    console.print("  [bold cyan]1[/bold cyan] Top-20 Popular Steam/PC Games (x20 Multiplier: 1 real hour = 20 Discord hours)")
-    console.print("  [bold cyan]2[/bold cyan] Top-10 Popular Games (x10 Multiplier)")
-    console.print("  [bold cyan]3[/bold cyan] Custom Game Selection")
+    console.print(f"  [{COLOR_ACCENT}]1[/] Топ-20 популярных игр (Множитель 20x: 1 час = 20 часов в Discord)")
+    console.print(f"  [{COLOR_ACCENT}]2[/] Топ-10 популярных игр (Множитель 10x)")
+    console.print(f"  [{COLOR_ACCENT}]3[/] Выбрать свои игры вручную")
 
-    ch = Prompt.ask("\nChoice", choices=["1", "2", "3"], default="1")
+    ch = Prompt.ask("\nВыбор", choices=["1", "2", "3"], default="1")
 
     selected = []
     if ch == "2":
         target = POPULAR_GAMES_PRESET[:10]
     elif ch == "3":
-        console.print("\n[dim]Enter game names to add (empty line to finish):[/dim]")
+        console.print(f"\n[{COLOR_MUTED}]Введите названия игр (пустой Enter для старта):[/]")
         while len(selected) < 20:
-            q = Prompt.ask(f"Game #{len(selected)+1}").strip()
+            q = Prompt.ask(f"Игра #{len(selected)+1}").strip()
             if not q:
                 break
             match = next((g for g in games if q.lower() in g["name"].lower()), None)
             if match and match not in selected:
                 selected.append(match)
-                console.print(f"  [green]+ Added:[/green] {match['name']}")
+                console.print(f"  [{COLOR_ACCENT}]+[/] {match['name']}")
             else:
-                console.print("  [red]Not found in database or already added.[/red]")
+                console.print(f"  [{COLOR_DIM}]Не найдено или уже в списке[/]")
         target = [g["name"] for g in selected]
     else:
         target = POPULAR_GAMES_PRESET
@@ -212,12 +229,11 @@ def run_hour_farm_mode(games: List[Dict[str, Any]]):
                 farmed_hours = (elapsed * mult) / 3600.0
 
                 live_panel = Panel(
-                    f"[bold white]Real Time Elapsed:[/bold white] [bold cyan]{h:02d}:{m:02d}:{s:02d}[/bold cyan]   │   "
-                    f"[bold white]Discord Hours Farmed:[/bold white] [bold green]{farmed_hours:5.2f} hrs[/bold green]   │   "
-                    f"[bold white]Multiplier:[/bold white] [bold magenta]{mult}x[/bold magenta]\n"
-                    f"[dim]All {mult} game processes streaming concurrently to Discord IPC. Press Ctrl+C to stop.[/dim]",
-                    title=f"[bold green]STREAMING ACTIVE ●[/bold green]",
-                    border_style="green",
+                    f"Реальное время: [bold {COLOR_WHITE}]{h:02d}:{m:02d}:{s:02d}[/]   │   "
+                    f"Засчитано в Discord: [bold {COLOR_ACCENT}]{farmed_hours:5.2f} ч[/]   │   "
+                    f"Множитель: [bold {COLOR_WHITE}]{mult}x[/]\n"
+                    f"[{COLOR_MUTED}]Процессы активны в фоне. Нажмите Ctrl+C для остановки.[/]",
+                    border_style=COLOR_BORDER,
                     box=box.ROUNDED
                 )
 
@@ -230,23 +246,26 @@ def run_hour_farm_mode(games: List[Dict[str, Any]]):
                 time.sleep(0.5)
 
     except KeyboardInterrupt:
-        console.print("\n\n[bold yellow][!] Terminating farm processes...[/bold yellow]")
+        console.print(f"\n\n[{COLOR_MUTED}]Остановка фарма часов...[/]")
     finally:
         runner.cleanup_temp()
-        console.print("[green][✓] All processes closed successfully.[/green]")
-        Prompt.ask("\nPress Enter to return")
+        console.print(f"[{COLOR_MUTED}]Все процессы закрыты.[/]")
+        Prompt.ask("\nНажмите Enter для возврата")
 
 
 def run_humanizer_mode(games: List[Dict[str, Any]]):
     clear()
-    console.print(Panel("[bold cyan]MODULE 03: HUMANIZER // STEALTH ORGANIC GAMER SIMULATION[/bold cyan]", border_style="cyan"))
-    console.print("[dim]Simulates realistic player habits: natural session durations, dynamic game switching, and AFK pauses.[/dim]\n")
+    console.print(Panel(
+        f"[bold {COLOR_WHITE}]Имитация живого игрока (Humanizer)[/]\n"
+        f"[{COLOR_MUTED}]Естественные игровые сессии со сменой игр и AFK-паузами[/]",
+        border_style=COLOR_BORDER,
+        box=box.ROUNDED
+    ))
 
-    console.print("Select pacing schedule:")
-    console.print("  [bold cyan]1[/bold cyan] Realistic Simulation (30-50 min play sessions + 5-10 min AFK breaks)")
-    console.print("  [bold cyan]2[/bold cyan] Accelerated / Demo (2-4 min play sessions + 30s AFK breaks)")
+    console.print(f"  [{COLOR_ACCENT}]1[/] Реалистичный режим (сессии 30-50 мин + перерыв 5-10 мин)")
+    console.print(f"  [{COLOR_ACCENT}]2[/] Ускоренный / Демо (сессии 2-4 мин + перерыв 30 сек)")
 
-    mode = Prompt.ask("\nPacing", choices=["1", "2"], default="1")
+    mode = Prompt.ask("\nРежим", choices=["1", "2"], default="1")
     is_demo = (mode == "2")
     sess_min, sess_max = (120, 240) if is_demo else (1800, 3000)
     afk_min, afk_max = (20, 45) if is_demo else (300, 600)
@@ -273,19 +292,17 @@ def run_humanizer_mode(games: List[Dict[str, Any]]):
                     rem = int(duration - (time.time() - start))
                     el = int(time.time() - start)
                     live_box = Panel(
-                        f"[bold green]STATE: IN-GAME ACTIVE[/bold green]\n\n"
-                        f"Current Title : [bold white]{active_game['name']}[/bold white]\n"
-                        f"Executable    : [cyan]{active_game['exe']}[/cyan]\n"
-                        f"Session Time  : [bold cyan]{el // 60:02d}:{el % 60:02d}[/bold cyan] / [dim]{duration // 60:02d}:{duration % 60:02d}[/dim]\n"
-                        f"Next Rotation : [yellow]{rem // 60:02d}:{rem % 60:02d}[/yellow]\n\n"
-                        f"[dim]Session #{session_num} │ Press Ctrl+C to terminate[/dim]",
-                        title="[bold cyan]SPECTRE HUMANIZER ENGINE[/bold cyan]",
-                        border_style="cyan"
+                        f"[{COLOR_ACCENT}]● В игре:[/] [bold {COLOR_WHITE}]{active_game['name']}[/]\n"
+                        f"[{COLOR_MUTED}]Процесс: {active_game['exe']}[/]\n\n"
+                        f"Текущая сессия : [bold {COLOR_WHITE}]{el // 60:02d}:{el % 60:02d}[/] / [{COLOR_MUTED}]{duration // 60:02d}:{duration % 60:02d}[/]\n"
+                        f"До смены игры  : [{COLOR_ACCENT}]{rem // 60:02d}:{rem % 60:02d}[/]\n\n"
+                        f"[{COLOR_DIM}]Сессия #{session_num} │ Ctrl+C для выхода[/]",
+                        border_style=COLOR_BORDER,
+                        box=box.ROUNDED
                     )
                     live.update(live_box)
                     time.sleep(0.5)
 
-            # AFK Break
             runner.cleanup_temp()
             afk_duration = random.randint(afk_min, afk_max)
             afk_start = time.time()
@@ -293,13 +310,12 @@ def run_humanizer_mode(games: List[Dict[str, Any]]):
                 while time.time() - afk_start < afk_duration:
                     rem = int(afk_duration - (time.time() - afk_start))
                     live_box = Panel(
-                        f"[bold yellow]STATE: AFK BREAK (No games active)[/bold yellow]\n\n"
-                        f"Player Status : [dim]Away from keyboard / Idle[/dim]\n"
-                        f"Break Time    : [bold yellow]{(time.time() - afk_start):.0f}s[/bold yellow] / [dim]{afk_duration}s[/dim]\n"
-                        f"Resuming in   : [bold white]{rem // 60:02d}:{rem % 60:02d}[/bold white]\n\n"
-                        f"[dim]Simulating organic downtime between gaming sessions[/dim]",
-                        title="[bold yellow]SPECTRE HUMANIZER ENGINE[/bold yellow]",
-                        border_style="yellow"
+                        f"[{COLOR_DIM}]○ Статус:[/] [{COLOR_MUTED}]AFK / Перерыв (активность снята)[/]\n\n"
+                        f"Перерыв длится : [{COLOR_MUTED}]{(time.time() - afk_start):.0f}с / {afk_duration}с[/]\n"
+                        f"Следующая игра : [bold {COLOR_WHITE}]{rem // 60:02d}:{rem % 60:02d}[/]\n\n"
+                        f"[{COLOR_DIM}]Имитация естественного поведения игрока[/]",
+                        border_style=COLOR_BORDER,
+                        box=box.ROUNDED
                     )
                     live.update(live_box)
                     time.sleep(0.5)
@@ -307,32 +323,37 @@ def run_humanizer_mode(games: List[Dict[str, Any]]):
             session_num += 1
 
     except KeyboardInterrupt:
-        console.print("\n\n[bold yellow][!] Humanizer halted by user.[/bold yellow]")
+        console.print(f"\n\n[{COLOR_MUTED}]Humanizer остановлен.[/]")
     finally:
         runner.cleanup_temp()
-        console.print("[green][✓] Processes terminated.[/green]")
-        Prompt.ask("\nPress Enter to return")
+        console.print(f"[{COLOR_MUTED}]Процессы завершены.[/]")
+        Prompt.ask("\nНажмите Enter для возврата")
 
 
 def run_forge_mode():
     clear()
-    console.print(Panel("[bold magenta]MODULE 04: GAME FORGE // UNRELEASED & CUSTOM PRESENCE[/bold magenta]", border_style="magenta"))
+    console.print(Panel(
+        f"[bold {COLOR_WHITE}]Кузница игр (Game Forge)[/]\n"
+        f"[{COLOR_MUTED}]Запуск процессов с кастомными названиями (невышедшие игры / фейки)[/]",
+        border_style=COLOR_BORDER,
+        box=box.ROUNDED
+    ))
 
-    table = Table(box=box.ROUNDED, expand=True)
-    table.add_column("Key", style="bold yellow", width=6, justify="center")
-    table.add_column("Preset Title", style="bold white")
-    table.add_column("Executable Target", style="cyan")
+    table = Table(box=box.SIMPLE, expand=True)
+    table.add_column("#", style=COLOR_ACCENT, width=4, justify="center")
+    table.add_column("Пресет", style=f"bold {COLOR_WHITE}")
+    table.add_column("Имя процесса", style=COLOR_MUTED)
 
     for idx, p in enumerate(FORGE_PRESETS, 1):
         table.add_row(str(idx), p["name"], p["exe"])
-    table.add_row("C", "[bold green]Custom Forge[/bold green] (Enter any title & exe name)", "[dim]user_defined.exe[/dim]")
+    table.add_row("C", "Создать свою игру (любое название)", "custom_game.exe")
 
     console.print(table)
-    ch = Prompt.ask("\nSelect target", default="1").strip()
+    ch = Prompt.ask("\nВыбор", default="1").strip()
 
     if ch.upper() == "C":
-        title = Prompt.ask("Custom Game Title").strip()
-        exe = Prompt.ask("Custom Executable Name (e.g. game.exe)", default="custom_game.exe").strip()
+        title = Prompt.ask("Название игры (как будет отображаться в Discord)").strip()
+        exe = Prompt.ask("Имя exe-файла", default="custom_game.exe").strip()
         if not title:
             return
     elif ch.isdigit() and 1 <= int(ch) <= len(FORGE_PRESETS):
@@ -346,52 +367,55 @@ def run_forge_mode():
 
     clear()
     console.print(Panel(
-        f"[bold green]VIRTUAL PROCESS RUNNING[/bold green]\n\n"
-        f"Game Title : [bold white]{title}[/bold white]\n"
-        f"Executable : [bold cyan]{exe}[/bold cyan]\n"
-        f"Status     : [green]Broadcasting on Discord IPC[/green]\n\n"
-        f"[dim]Check your Discord profile. Press Enter to terminate.[/dim]",
-        border_style="green",
+        f"[{COLOR_ACCENT}]● Активен кастомный процесс[/]\n\n"
+        f"Название : [bold {COLOR_WHITE}]{title}[/]\n"
+        f"Процесс  : [{COLOR_MUTED}]{exe}[/]\n\n"
+        f"[{COLOR_DIM}]Проверьте статус в Discord. Нажмите Enter для остановки.[/]",
+        border_style=COLOR_BORDER,
         box=box.ROUNDED
     ))
 
-    Prompt.ask("\nPress Enter to stop")
+    Prompt.ask("\nНажмите Enter для остановки")
     runner.cleanup_temp()
-    console.print("[green][✓] Custom process terminated.[/green]")
+    console.print(f"[{COLOR_MUTED}]Процесс остановлен.[/]")
     time.sleep(0.8)
 
 
 def run_single_mode(games: List[Dict[str, Any]]):
     clear()
-    console.print(Panel("[bold cyan]MODULE 05: SINGLE SPOOF // DIRECT LAUNCH[/bold cyan]", border_style="cyan"))
+    console.print(Panel(
+        f"[bold {COLOR_WHITE}]Одиночный запуск из базы[/]",
+        border_style=COLOR_BORDER,
+        box=box.ROUNDED
+    ))
 
-    q = Prompt.ask("Search verified title in database").strip()
+    q = Prompt.ask("Поиск игры по названию").strip()
     if not q:
         return
 
     matches = [g for g in games if q.lower() in g["name"].lower()][:10]
     if not matches:
-        console.print("[red]No matching games found in Discord index.[/red]")
-        Prompt.ask("\nPress Enter to return")
+        console.print(f"[{COLOR_MUTED}]Игр не найдено.[/]")
+        Prompt.ask("\nНажмите Enter для возврата")
         return
 
-    table = Table(box=box.ROUNDED)
-    table.add_column("#", style="bold yellow", width=4)
-    table.add_column("Title", style="bold white")
-    table.add_column("Executable", style="cyan")
+    table = Table(box=box.SIMPLE)
+    table.add_column("#", style=COLOR_ACCENT, width=4)
+    table.add_column("Название", style=f"bold {COLOR_WHITE}")
+    table.add_column("Файл", style=COLOR_MUTED)
 
     for idx, m in enumerate(matches, 1):
         table.add_row(str(idx), m["name"], m["exe"])
     console.print(table)
 
-    c = Prompt.ask("\nSelect game number", choices=[str(i) for i in range(1, len(matches) + 1)])
+    c = Prompt.ask("\nВыберите номер", choices=[str(i) for i in range(1, len(matches) + 1)])
     sel = matches[int(c) - 1]
 
     runner = SpooferRunner()
     runner.launch_game(sel)
 
-    console.print(f"\n[bold green][✓] {sel['name']} is now active in Discord![/bold green]")
-    Prompt.ask("Press Enter to stop the game")
+    console.print(f"\n[{COLOR_ACCENT}]● {sel['name']} активна в Discord[/]")
+    Prompt.ask("\nНажмите Enter для завершения")
     runner.cleanup_temp()
 
 
@@ -400,21 +424,26 @@ def show_stats(history: HistoryManager, total_games: int):
     boosted = history.total_count()
     pct = (boosted / total_games * 100) if total_games else 0.0
 
-    stat_table = Table(box=box.ROUNDED, show_header=False, expand=True)
-    stat_table.add_column(style="bold cyan", width=30)
-    stat_table.add_column(style="bold white")
+    stat_table = Table(box=box.SIMPLE, show_header=False, expand=True)
+    stat_table.add_column(style=COLOR_MUTED, width=30)
+    stat_table.add_column(style=f"bold {COLOR_WHITE}")
 
-    stat_table.add_row("Verified Discord Titles Index", f"{total_games:,}")
-    stat_table.add_row("Titles Farmed in History", f"[green]{boosted:,}[/green] ({pct:.2f}%)")
-    stat_table.add_row("Remaining to Mythic Tier (10k)", f"[yellow]{max(0, 10000 - boosted):,}[/yellow]")
+    stat_table.add_row("Всего игр в базе Discord:", f"{total_games:,}")
+    stat_table.add_row("Пройдено в истории:", f"[{COLOR_ACCENT}]{boosted:,}[/] ({pct:.2f}%)")
+    stat_table.add_row("Осталось до Мифика (10k):", f"{max(0, 10000 - boosted):,}")
 
-    console.print(Panel(stat_table, title="[bold cyan]TELEMETRY & BADGE ANALYTICS[/bold cyan]", border_style="cyan"))
+    console.print(Panel(
+        stat_table,
+        title=f"[{COLOR_MUTED}]Статистика профиля[/]",
+        border_style=COLOR_BORDER,
+        box=box.ROUNDED
+    ))
 
     if boosted > 0:
-        history_table = Table(title="Recent Activity Log (Last 5 Titles)", box=box.SIMPLE)
-        history_table.add_column("App ID", style="dim")
-        history_table.add_column("Game Title", style="bold white")
-        history_table.add_column("Processed At", style="cyan")
+        history_table = Table(title=f"[{COLOR_DIM}]Последние 5 игр[/]", box=box.SIMPLE)
+        history_table.add_column("ID", style=COLOR_DIM)
+        history_table.add_column("Игра", style=f"bold {COLOR_WHITE}")
+        history_table.add_column("Время", style=COLOR_MUTED)
 
         items = list(history.data.items())[-5:]
         for gid, data in reversed(items):
@@ -422,15 +451,14 @@ def show_stats(history: HistoryManager, total_games: int):
             history_table.add_row(gid, data.get("name", "Unknown"), ts)
         console.print(history_table)
 
-    console.print("\nActions:")
-    console.print("  [bold red]1[/bold red] Reset history (purge history.json)")
-    console.print("  [bold white]0[/bold white] Back to menu")
+    console.print(f"\n  [{COLOR_ACCENT}]1[/] Очистить историю сессий")
+    console.print(f"  [{COLOR_WHITE}]0[/] Назад")
 
-    ch = Prompt.ask("\nChoice", choices=["0", "1"], default="0")
+    ch = Prompt.ask("\nВыбор", choices=["0", "1"], default="0")
     if ch == "1":
-        if Confirm.ask("[bold red]Are you sure you want to erase all farmed history?[/bold red]", default=False):
+        if Confirm.ask("Точно очистить историю?", default=False):
             history.clear()
-            console.print("[green][✓] History cleared.[/green]")
+            console.print(f"[{COLOR_MUTED}]История сброшена.[/]")
             time.sleep(1)
 
 
@@ -439,7 +467,7 @@ def main():
         os.system("")
 
     history = HistoryManager()
-    with console.status("[bold cyan]Loading Discord detectable database...", spinner="dots"):
+    with console.status(f"[{COLOR_MUTED}]Загрузка базы игр...[/]", spinner="dots", spinner_style=COLOR_ACCENT):
         games = fetch_games()
 
     while True:
@@ -447,28 +475,34 @@ def main():
         console.print(make_header_panel(is_discord_running(), len(games), history.total_count()))
         console.print(make_menu_table())
 
-        choice = Prompt.ask("   [bold cyan]spectre>[/bold cyan]", choices=["0", "1", "2", "3", "4", "5", "6", "7"], default="1")
+        choice = Prompt.ask(
+            f"   [{COLOR_MUTED}]выбор[/] [{COLOR_ACCENT}]>[/]",
+            choices=["0", "00", "1", "01", "2", "02", "3", "03", "4", "04", "5", "05", "6", "06", "7", "07"],
+            default="1"
+        )
 
-        if choice == "1":
+        ch = choice.lstrip("0") or "0"
+
+        if ch == "1":
             run_variety_mode(games, history)
-        elif choice == "2":
+        elif ch == "2":
             run_hour_farm_mode(games)
-        elif choice == "3":
+        elif ch == "3":
             run_humanizer_mode(games)
-        elif choice == "4":
+        elif ch == "4":
             run_forge_mode()
-        elif choice == "5":
+        elif ch == "5":
             run_single_mode(games)
-        elif choice == "6":
+        elif ch == "6":
             show_stats(history, len(games))
-        elif choice == "7":
-            with console.status("[bold cyan]Synchronizing with Discord REST API...", spinner="dots"):
+        elif ch == "7":
+            with console.status(f"[{COLOR_MUTED}]Синхронизация с Discord API...[/]", spinner="dots", spinner_style=COLOR_ACCENT):
                 games = fetch_games(force_refresh=True)
-            console.print(f"[bold green][✓] Index synchronized! Total titles: {len(games):,}[/bold green]")
+            console.print(f"[{COLOR_ACCENT}]База обновлена. Всего игр: {len(games):,}[/]")
             time.sleep(1)
-        elif choice == "0":
+        elif ch == "0":
             clear()
-            console.print("[bold cyan]SPECTRE Engine successfully shut down.[/bold cyan]")
+            console.print(f"[{COLOR_MUTED}]Работа завершена.[/]")
             break
 
 
