@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/logo.jpg" alt="SPECTRE Logo" width="160" height="160" style="border-radius: 32px;" />
+
 # SPECTRE
 ### High-Performance Discord Activity & Badge Virtualization Engine
 *Created by [an1zy](https://github.com/an1zy)*
